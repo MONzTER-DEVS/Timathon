@@ -1,0 +1,1 @@
+web: gunicorn src.timathon.wsgi --log-file -
