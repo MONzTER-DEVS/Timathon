@@ -10,12 +10,28 @@
     display: flex;
     position: relative;
     margin-top: 25vh;
+    margin-bottom: 1px;
     font-family: 'Roboto Slab', sans-serif;
+    font-size: 5em;
+    color: #FFFFFF;
+    text-shadow: 0 0 0.5em #342E37;
 }
 
 .heading-desc{
-    margin: 10px 0;
+    margin: 1px 0;
     font-family: 'Lobster', cursive;
+    font-size: 2em;
+    color: #342E37;
+    text-shadow: 0 0 0.5em #FFFFFF;
+}
+
+/* Images */
+.heading-img {
+    width: 300px;
+    display: flex;
+    position: relative;
+    margin-top: 17vh;
+    margin-bottom: 1px;
 }
 
 /*Divs*/
@@ -29,6 +45,7 @@
 .body-container::before {
     content: "";
     background: url("../images/bg.jpg") no-repeat center center/cover;
+    background-position: bottom;
     position: absolute;
     margin: 0;
     top: 0;
