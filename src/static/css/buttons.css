@@ -28,10 +28,10 @@
     border-radius: 10px;
     padding: 5px 10px;
     margin: 10px 0;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
     font-family: 'Baloo Bhai 2', cursive;
 }
 
 .btn-get-started:hover{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
 }
