@@ -1,0 +1,67 @@
+/*Navbar Styling*/
+
+#navbar-logo {
+    width: 200px;
+    height: 90px;
+    /*border-radius: 40px;*/
+    /*margin: 10px 20px;*/
+}
+
+.navbar-header {
+    height: 100px;
+}
+
+.navbar-header::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.navbar-div {
+    /*height: 120px;*/
+}
+
+.navbar-brand {
+    list-style: none;
+    /*height: 80px;*/
+    /*margin: 0 10px;*/
+}
+
+.navbar-brand-link {
+    font-family: 'Stick', sans-serif;
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+    text-shadow: 1px 1px 2px black;
+
+}
+
+#navbar-first-link {
+    margin-left: 50px;
+}
+
+.navbar-list-link {
+    font-family: 'Baloo Bhai 2', cursive;
+    text-decoration: none;
+    /*height: 80px;*/
+    margin: 0 20px;
+    text-shadow: 1px 1px 2px #4c4949;
+    color: #4c4949;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out    ;
+}
+
+.navbar-list-link:hover {
+    color: black;
+}
+
+.navbar-list-item {
+    list-style: none;
+}
+
+#navbar-right {
+    margin-left: 710px;
+}
