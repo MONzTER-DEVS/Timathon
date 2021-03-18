@@ -23,16 +23,40 @@
 
 .btn-get-started{
     background: transparent;
-    border: 2px solid #EE964B;
+    border: 2px solid #32d2b5;
     border-radius: 10px;
     padding: 5px 10px;
     margin: 10px 0;
     transition: all 0.2s ease-in-out;
     font-family: 'Baloo Bhai 2', cursive;
-    color: #EE964B;
+    color: #32d2b5;
     text-shadow: 0 0 0.5em black;
 }
 
+/*.btn-get-started:hover{*/
+/*    background-color: rgba(255, 255, 255, 0.5);*/
+/*}*/
+
 .btn-get-started:hover{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #32d2b5;
+    color: black;
+    box-shadow: 0 0 10px #32d2b5, 0 0 40px #32d2b5, 0 0 80px #32d2b5;
+}
+
+.btn-how-it-works{
+    background: transparent;
+    border: 2px solid #32d2b5;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    transition: all 0.2s ease-in-out;
+    font-family:  'Baloo Bhai 2', cursive;
+    color: #32d2b5;
+    text-shadow: 0 0 0.5em black;
+}
+
+.btn-how-it-works:hover{
+    background-color: #32d2b5;
+    box-shadow: 0 0 10px #32d2b5, 0 0 40px #32d2b5, 0 0 80px #32d2b5;
+    color: black;
 }
