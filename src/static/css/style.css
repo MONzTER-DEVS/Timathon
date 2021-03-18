@@ -46,7 +46,7 @@
 
 .body-container::before {
     content: "";
-    background: url("../images/bg.jpg") no-repeat center center/cover;
+    background: url("../images/bg.png") no-repeat center center/cover;
     background-position: center;
     position: absolute;
     margin: 0;
