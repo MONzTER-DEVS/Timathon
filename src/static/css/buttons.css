@@ -23,13 +23,14 @@
 
 .btn-get-started{
     background: transparent;
-    color: black;
-    border: 2px solid black;
+    border: 2px solid #EE964B;
     border-radius: 10px;
     padding: 5px 10px;
     margin: 10px 0;
     transition: all 0.2s ease-in-out;
     font-family: 'Baloo Bhai 2', cursive;
+    color: #EE964B;
+    text-shadow: 0 0 0.5em black;
 }
 
 .btn-get-started:hover{

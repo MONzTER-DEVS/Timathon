@@ -22,7 +22,7 @@
     font-family: 'Lobster', cursive;
     font-size: 2em;
     color: #342E37;
-    text-shadow: 0 0 0.5em #000;
+    text-shadow: 0 0 0.5em white;
     padding: 15px 15px;
     border-radius: 25px;
 }
