@@ -1,3 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Mentis Oculi | Your Data Visualizer{% endblock %}
+
+{% block header %}
+<nav class="navbar-header flex">
+    <div class="navbar-div">
+        <ul class="navbar-list flex">
+            <div class="navbar-logo-div">
+                <img src="{% static 'images\logo.png' %}" alt="LOGO-IMAGE" id="navbar-logo">
+            </div>
+<!--            <li class="navbar-brand flex underline-brand"><a class="navbar-brand-link bold" href="#">MENTIS OCULI</a></li>-->
+            <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link" href="#">Home</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex" href="#">Components</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex" href="#">Favourites</a></li>
+            <li class="navbar-list-item"><button class="flex navbar-button" id="navbar-right" href="#">Signin</button></li>
+            <li class="navbar-list-item"><button class="flex navbar-button" href="#">Signup</button></li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block main %}
+    <h1 class="heading-brand">MENTIS OCULI</h1>
+    <h1 class="heading-desc">Your Data Visualizer</h1>
+    <button class="btn-get-started">Get Started</button>
+
+{% endblock %}
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,3 +37,4 @@
     <h1>timathon</h1>
 </body>
 </html>
+>>>>>>> 66f56227998480932e2ed65394826c95cbac02ee
