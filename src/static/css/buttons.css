@@ -4,7 +4,7 @@
     position: relative;
     height: 40px;
     padding: 12px 12px;
-    border: 3px solid rgba(59, 130, 246, 0.5);
+    border: 2px solid #EE964B;
     /*color: rgba(59,130,246,0.5);*/
     border-radius: 10px;
     /*font-weight: bolder;*/
@@ -18,7 +18,7 @@
 }
 
 .navbar-button:hover{
-    background-color: rgba(59, 130, 246, 0.5);
+    background-color: #EE964B;
 }
 
 .btn-get-started{
