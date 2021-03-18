@@ -54,6 +54,10 @@
     transition: all 0.2s ease-in-out    ;
 }
 
+.navbar-list {
+    width: 100vw;
+}
+
 .navbar-list-link:hover {
     color: black;
 }
@@ -62,6 +66,12 @@
     list-style: none;
 }
 
-#navbar-right {
-    margin-left: 700px;
+#navbar-signin {
+    position: absolute;
+    right: 0px;
+}
+
+#navbar-signup {
+    position: absolute;
+    right: 100px;
 }
