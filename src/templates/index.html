@@ -24,12 +24,19 @@
 </nav>
 {% endblock %}
 
-{% block main %}
+{% block main-bg %}
 <img src="{% static 'images\logo.png' %}" width="400px" alt="LOGO-IMAGE" class="heading-img">
 <h1 class="heading-desc">Your Perfect Data Visualizer</h1>
 <div class="buttons-div">
+    <button class="btn-arrow-left"><span class="fa fa-chevron-left"></span></button>
     <button class="btn-get-started"><span class="fa fa-check-square-o"></span>Get Started</button>
     <button class="btn-how-it-works"><span class="fa fa-arrow-circle-right"></span>How To Operate</button>
+    <button class="btn-arrow-right"><span class="fa fa-chevron-right"></span></button>
 </div>
 
+{% endblock %}
+
+{% block main-content %}
+    <h1>Content</h1>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unde saepe nostrum!
 {% endblock %}
