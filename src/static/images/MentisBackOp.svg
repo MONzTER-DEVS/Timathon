@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1366" height="5e3" version="1.1" viewBox="0 0 361.4 1323" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <filter id="filter951" color-interpolation-filters="sRGB">
+   <feFlood flood-color="rgb(34,116,165)" flood-opacity=".498" result="flood"/>
+   <feComposite in="SourceGraphic" in2="flood" operator="in" result="composite1"/>
+   <feGaussianBlur in="composite1" result="blur" stdDeviation="11.9299"/>
+   <feOffset dx="0" dy="0" result="offset"/>
+   <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
+  </filter>
+  <filter id="filter969" x="-.23" y="-.24" width="1.41" height="1.47" color-interpolation-filters="sRGB">
+   <feFlood flood-color="rgb(34,116,165)" flood-opacity=".498" result="flood"/>
+   <feComposite in="SourceGraphic" in2="flood" operator="in" result="composite1"/>
+   <feGaussianBlur in="composite1" result="blur" stdDeviation="11.9299"/>
+   <feOffset dx="0" dy="0" result="offset"/>
+   <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
+  </filter>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <rect width="361.4" height="1323" ry="0" fill="#877b66"/>
+ <path d="m0 0h361.4v200c2.3e-4 -8e-5 -30.31-13.11-88.11-13.11-57.8 0-122.5 51.44-167.7 51.44-45.18 0-105.6-38.33-105.6-38.33z" fill="#342e37" filter="url(#filter951)"/>
+ <g>
+  <g fill="#342e37">
+   <ellipse cx="369.1" cy="275.2" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(1.783 0 0 1.783 142.7 -450)" cx="83.32" cy="440.8" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse cx="310" cy="403.1" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+  </g>
+  <g fill="#ee964b">
+   <ellipse cx="-12.72" cy="134.4" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(1.516 0 0 1.516 352.7 -27.19)" cx="19.97" cy="54.75" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.3427 0 0 .3427 132.2 155.8)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.9513 0 0 .9513 94.36 -75.37)" cx="19.97" cy="54.75" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+  </g>
+  <g fill="#342e37">
+   <ellipse cx="111.3" cy="484.1" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(1.783 0 0 1.783 -87.51 -238.2)" cx="83.32" cy="440.8" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(1.383 0 0 1.383 -9.866 -283.4)" cx="41.76" cy="654" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse cx="368.4" cy="722" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(1.783 0 0 1.783 171.7 10.73)" cx="83.32" cy="440.8" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(1.383 0 0 1.383 282.9 -9.32)" cx="41.76" cy="654" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.2849 0 0 .2849 123 713)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(1.783 0 0 1.783 -96.72 311.2)" cx="83.32" cy="440.8" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(1.383 0 0 1.383 -13.05 298.3)" cx="41.76" cy="654" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.9678 0 0 .9678 26.4 355.6)" cx="41.76" cy="654" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4645 0 0 .4645 110.1 664.7)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4645 0 0 .4645 166.1 350.3)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4645 0 0 .4645 115.8 16.05)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4645 0 0 .4645 199.8 -227.3)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.2849 0 0 .2849 169.1 436.7)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.2849 0 0 .2849 167.9 254.7)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.3516 0 0 .3516 51.11 -48.33)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4836 0 0 .4836 107.2 145.1)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4836 0 0 .4836 151.4 569.7)" cx="99.97" cy="1022" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+  </g>
+  <g fill="#ee964b">
+   <ellipse transform="matrix(.3427 0 0 .3427 300.3 187.3)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.3427 0 0 .3427 58.48 558.2)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.3427 0 0 .3427 229.8 769.1)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.3427 0 0 .3427 67.72 966.1)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4837 0 0 .4837 -.08464 1220)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4837 0 0 .4837 264.2 871)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4837 0 0 .4837 65.72 440.6)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+   <ellipse transform="matrix(.4837 0 0 .4837 268.7 196.1)" cx="184.3" cy="130.3" rx="55.99" ry="55.6" filter="url(#filter969)"/>
+  </g>
+ </g>
+</svg>

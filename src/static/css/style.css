@@ -21,8 +21,8 @@
     margin: 1px 0;
     font-family: 'Lobster', cursive;
     font-size: 2em;
-    color: #342E37;
-    text-shadow: 0 0 0.5em white;
+    color: #CD5D67;
+    text-shadow: 0 0 0.5em #CD5D67, 0 0 1em #CD5D67, 0 0 1.5em #CD5D67;
     padding: 15px 15px;
     border-radius: 25px;
 }
@@ -35,6 +35,12 @@
     margin-top: 30vh;
     margin-bottom: 1px;
     z-index: -1;
+}
+
+/* Whole body */
+body {
+    background: url("../images/MentisBackOp.svg") no-repeat center center/cover;
+    background-position: top;
 }
 
 
@@ -53,15 +59,15 @@
 
 .body-container-bg::before {
     content: "";
-    background: url("../images/bg.png") no-repeat center center/cover;
-    background-position: center;
+    /* background: url("../images/MentisBackOp.svg") no-repeat center center/cover; */
+    background-position: top;
     position: absolute;
     margin: 0;
     top: 0;
     height: 100vh;
     width: 100%;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0;
 }
 .body-container{
     flex-direction: column;
