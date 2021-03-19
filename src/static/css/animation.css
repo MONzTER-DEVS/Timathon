@@ -1,26 +1,28 @@
-.navbar-animation {
-    animation-name: navbarAnimation;
-    animation-duration: 2.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
-    /*animation-timing-function: ease-out;*/
+.animation {
+    animation-name: Animation;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    /*animation-iteration-count: 1;*/
+    animation-fill-mode: both;
+    /*animation-timing-function: ease-in;*/
 }
 
-@keyframes navbarAnimation {
-    0% {
-        height: 100px;
-    }
-    50% {
-        height: 200px;
-    }
-    100% {
-        height: 100px;
-    }
-    /*from{*/
+@keyframes Animation {
+    /*0% {*/
     /*    height: 100px;*/
     /*}*/
-    /*to{*/
+    /*50% {*/
     /*    height: 200px;*/
     /*}*/
+    /*100% {*/
+    /*    height: 100px;*/
+    /*}*/
+    from{
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
 }

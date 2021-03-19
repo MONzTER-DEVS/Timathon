@@ -1,10 +1,17 @@
-navbar = document.getElementsByClassName('navbar-header')[0];
+console.log("Testing!");
+const nav = document.querySelector("nav");
 
-window.addEventListener('DOMContentLoaded', navbarAnimation = () => {
-    navbar.classList.add('navbar-animation');
-});
+const colorNav = '#e9eadb';
+const tempNavHeight = 120;
+function changeColorNav(){
+    if (nav.getBoundingClientRect().top + document.documentElement.scrollTop > tempNavHeight) {
+        nav.style.backgroundColor = colorNav;
+        nav.style.transition = "all 0.4s ease-in";
+    } else {
+        nav.style.transition = "all 0.4s ease-in";
+        nav.style.backgroundColor = "transparent";
+        nav.style.border = 0;
+    }
+}
 
-// if(navbar.classList.contains('navbar-animation')){
-//     /* animation: amination-name animation-duration animation-iteration-count; */
-//     navbar.style.animation: '2.5s 1 '
-// }
+window.addEventListener('scroll', changeColorNav);

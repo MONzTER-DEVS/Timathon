@@ -50,13 +50,43 @@
     padding: 5px 10px;
     margin: 10px 0;
     transition: all 0.2s ease-in-out;
-    font-family:  'Baloo Bhai 2', cursive;
+    font-family: 'Baloo Bhai 2', cursive;
     color: #32d2b5;
     text-shadow: 0 0 0.5em black;
 }
 
-.btn-how-it-works:hover{
+.btn-how-it-works:hover {
     background-color: #32d2b5;
     box-shadow: 0 0 10px #32d2b5, 0 0 40px #32d2b5, 0 0 80px #32d2b5;
     color: black;
+}
+
+.btn-arrow-left {
+    position: absolute;
+    left: 20px;
+    top: 48vh;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 25px;
+    padding: 0 10px;
+}
+
+.btn-arrow-left:hover {
+    color: #9e9898;
+}
+
+.btn-arrow-right {
+    position: absolute;
+    right: 20px;
+    top: 48vh;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 25px;
+}
+
+.btn-arrow-right:hover{
+    color: #9e9898;
+
 }
