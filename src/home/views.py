@@ -5,4 +5,14 @@ from django.shortcuts import render
 
 # the home page
 def index(request):
-    return render(request, '../templates/index.html')
+    return render(request, '../templates/home/index.html')
+
+
+def components(request):
+    return render(request, '../templates/home/components.html')
+
+
+def favourites(request):
+    return render(request, '../templates/home/favourites.html')
+
+

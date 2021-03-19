@@ -1,0 +1,47 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Mentis Oculi | Your Perfect Data Visualizer{% endblock %}
+
+{% block header %}
+<nav class="navbar-header flex">
+    <div class="navbar-div">
+        <ul class="navbar-list flex">
+            <div class="navbar-logo-div">
+                <embed src="{% static 'images\logo.svg' %}" alt="LOGO-IMAGE" id="navbar-logo">
+            </div>
+<!--            <li class="navbar-brand flex underline-brand"><a class="navbar-brand-link bold" href="#">MENTIS OCULI</a></li>-->
+            <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link" href="#">Home</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:components' %}">Components</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:favourites' %}">Favourites</a></li>
+            <li class="navbar-list-item">
+                <button class="flex navbar-button" id="navbar-signin" href="#"><span class="fa fa-sign-in"> </span>Signin</button>
+            </li>
+            <li class="navbar-list-item">
+                <button class="flex navbar-button" id="navbar-signup" href="#"><span class="fa fa-user"> </span> Signup</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block main-bg %}
+<embed src="{% static 'images\logo.svg' %}" width="400px" alt="LOGO-IMAGE" class="heading-img">
+<h1 class="heading-desc">Your Perfect Data Visualizer</h1>
+<p class="features-text flex">Visualize Data, View Charts, Make Tables, Export Your Model And Much More...</p>
+<div class="buttons-div">
+    <!-- <button class="btn-arrow-left"><span class="fa fa-chevron-left"></span></button> -->
+    <button class="btn-get-started"><span class="fa fa-check-square-o"></span>Get Started</button>
+    <button class="btn-how-it-works"><span class="fa fa-arrow-circle-right"></span>How To Operate</button>
+    <!-- <button class="btn-arrow-right"><span class="fa fa-chevron-right"></span></button> -->
+    <button class="btn-feedback"><span class="fa fa-envelope-o">Feedback</span></button>
+</div>
+
+{% endblock %}
+
+{% block main-content %}
+<!--    <h1>Content</h1>-->
+<!--    <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unde saepe nostrum!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unLorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unLorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque un
+    </div> -->
+{% endblock %}

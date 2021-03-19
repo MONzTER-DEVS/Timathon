@@ -1,5 +1,5 @@
-.animation {
-    animation-name: Animation;
+.animation-fade-up {
+    animation-name: AnimationFadeUp;
     animation-delay: 1s;
     animation-duration: 1s;
     /*animation-iteration-count: 1;*/
@@ -7,7 +7,7 @@
     /*animation-timing-function: ease-in;*/
 }
 
-@keyframes Animation {
+@keyframes AnimationFadeUp {
     /*0% {*/
     /*    height: 100px;*/
     /*}*/

@@ -27,6 +27,13 @@
     border-radius: 25px;
 }
 
+.features-text {
+    color: #EE964B;
+    font-size: 20px;
+    font-family: 'Baloo Bhai 2', cursive;
+    text-shadow: 0 0 0.5em #EE964B, 0 0 1em #EE964B, 0 0 1.5em #EE964B;
+}
+
 /* Images */
 .heading-img {
     width: 300px;
@@ -41,6 +48,7 @@
 body {
     background: url("../images/MentisBackOp.svg") no-repeat center center/cover;
     background-position: top;
+    height: 900vh;
 }
 
 
@@ -96,7 +104,7 @@ h1 {
 
 /* Utility Classes */
 
-.bold{
+.bold {
     font-weight: bolder;
 }
 
@@ -104,11 +112,21 @@ h1 {
     font-style: italic;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
 }
 
 span {
     margin: 5px;
+}
+
+/*Scroll Bar*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cec9c9;
+    border-radius: 12px;
 }

@@ -7,4 +7,6 @@ app_name = 'home'
 # urls
 urlpatterns = [
     path('', views.index, name='index'),
+    path('components/', views.components, name='components'),
+    path('favourites/', views.favourites, name='favourites'),
 ]
