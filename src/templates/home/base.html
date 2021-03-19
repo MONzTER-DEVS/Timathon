@@ -21,12 +21,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&family=Lobster&family=Roboto&family=Roboto+Slab&family=Stick&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!--title block -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -34,11 +35,14 @@
     {% block header %}{% endblock %}
 </header>
 
-<div class="body-container-bg flex">
+<div class="body-container-bg flex" data-aos="fade-up" data-aos-duration="1000">
     {% block main-bg %}{% endblock %}
 </div>
 <div class="body-container flex">
     {% block main-content %}{% endblock %}
+</div>
+<div class="body-footer flex">
+    {% block footer %}{% endblock %}
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
 
@@ -52,5 +56,11 @@
 -->
 <script src="{% static 'js/animation.js' %}"></script>
 <script src="{% static 'js/navbar.js' %}"></script>
+<script src="{% static 'js/features.js' %}"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </body>
 </html>

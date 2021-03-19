@@ -33,15 +33,62 @@
     <button class="btn-get-started"><span class="fa fa-check-square-o"></span>Get Started</button>
     <button class="btn-how-it-works"><span class="fa fa-arrow-circle-right"></span>How To Operate</button>
     <!-- <button class="btn-arrow-right"><span class="fa fa-chevron-right"></span></button> -->
-    <button class="btn-feedback"><span class="fa fa-envelope-o">Feedback</span></button>
-</div>
 
+</div>
+{% endblock %}
+{% block main-content %}
+<div class="features">
+    <div class="feature-one flex" data-aos="fade-up" data-aos-duration="1000">
+        <div class="feature-text-div">
+            <h1 class="heading-one-feature">In Search Of A <span class="feature-span">Free Data Visualizer?</span>
+            </h1>
+            <div class="underline-blue"></div>
+            <p class="para-one-feature">We are here to offer you with <span class="para-span">Mentis Oculi</span>
+                which
+                <br>is free of cost having all the necessary features <br>to analyze your data and make manipulations!
+            </p>
+        </div>
+        <embed src="{% static 'images\features\feature-image-one.svg' %}" width="600px" height="500px"
+               alt="FEATURE-ONE-IMAGE"
+               class="image-feature-one">
+    </div>
+    <div class="feature-two" data-aos="fade-up" data-aos-duration="1000">
+
+        <embed src="{% static 'images\features\feature-image-two.svg' %}" width="600px" height="500px"
+               alt="FEATURE-ONE-IMAGE"
+               class="image-feature-three">
+        <div class="feature-two-text-div" style="margin-left: 200px;">
+            <h1 class="heading-two-feature">Fed Up Analyzing <span class="feature-span">Huge Chunk Of Data?</span>
+
+            </h1>
+            <div class="underline-blue-two"></div>
+            <p class="para-two-feature">You are at the correct place now! We put forward some<br><span
+                    class="para-span">awesome favourite tools </span>to analyze your data in the form of <br>graphs
+                and tables...
+            </p>
+        </div>
+    </div>
+    <div class="feature-one flex" data-aos="fade-up" data-aos-duration="1000">
+        <div class="feature-text-div">
+            <h1 class="heading-three-feature">Want All The <span class="feature-span">Different Types Of Graph</span>
+                For Your Data?
+            </h1>
+            <div class="underline-blue-three"></div>
+            <p class="para-three-feature">We'll provide with <span
+                    class="para-span">all the different types of chart<br></span> for your data and export your chart as
+                a csv file or png file.
+            </p>
+        </div>
+        <embed src="{% static 'images\features\feature-image-three.svg' %}" width="600px" height="500px"
+               alt="FEATURE-ONE-IMAGE"
+               class="image-feature-three">
+    </div>
+</div>
 {% endblock %}
 
-{% block main-content %}
-<!--    <h1>Content</h1>-->
-<!--    <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unde saepe nostrum!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unLorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unLorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque un
-    </div> -->
+{% block footer %}
+<div class="footer-div">
+    <h1 class="footer-heading">So, What's The Delay For?</h1>
+    <h2 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h2>
+</div>
 {% endblock %}
