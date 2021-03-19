@@ -56,18 +56,19 @@
     text-decoration: none;
     /*height: 80px;*/
     margin: 0 20px;
-    text-shadow: 1px 1px 2px #4c4949;
-    color: #4c4949;
+    text-shadow: 1px 1px 2px black;
+    color: #32D2B5;
     font-size: 20px;
-        transition: all 0.2s ease-in-out    ;
-}
-
-.navbar-list {
-    width: 100vw;
+    transition: all 0.2s ease-in-out;
 }
 
 .navbar-list-link:hover {
     color: black;
+    text-shadow: 0 0 1em #32D2B5, 0 0 1.25em #32D2B5, 0 0 1.5em #32D2B5;
+}
+
+.navbar-list {
+    width: 100vw;
 }
 
 .navbar-list-item {
@@ -83,6 +84,6 @@
 
 #navbar-signup {
     position: absolute;
-    right: 120px;
+    right: 140px;
     top: 35px;
 }

@@ -5,14 +5,17 @@
     height: 40px;
     padding: 12px 12px;
     border: 2px solid #CD5D67;
-    /*color: rgba(59,130,246,0.5);*/
     border-radius: 10px;
+    
     /*font-weight: bolder;*/
     font-family: 'Baloo Bhai 2', cursive;
     font-size: 18px;
+    color: #CD5D67;
+
     cursor: pointer;
     text-decoration: none;
     margin: -29px 5px;
+    
     background-color: transparent;
     transition: all 0.2s ease-in-out;
 }
@@ -20,6 +23,8 @@
 .navbar-button:hover{
     background-color: #CD5D67;
     box-shadow: 0 0 10px #CD5D67, 0 0 40px #CD5D67, 0 0 80px #CD5D67;
+    color: black;
+    text-shadow: 0 0 1em black, 0 0 1em black;
 }
 
 .btn-get-started{

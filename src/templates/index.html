@@ -7,7 +7,7 @@
     <div class="navbar-div">
         <ul class="navbar-list flex">
             <div class="navbar-logo-div">
-                <img src="{% static 'images\logo.png' %}" alt="LOGO-IMAGE" id="navbar-logo">
+                <embed src="{% static 'images\logo.svg' %}" alt="LOGO-IMAGE" id="navbar-logo">
             </div>
 <!--            <li class="navbar-brand flex underline-brand"><a class="navbar-brand-link bold" href="#">MENTIS OCULI</a></li>-->
             <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link" href="#">Home</a></li>
@@ -25,7 +25,7 @@
 {% endblock %}
 
 {% block main-bg %}
-<img src="{% static 'images\logo2.svg' %}" width="400px" alt="LOGO-IMAGE" class="heading-img">
+<embed src="{% static 'images\logo.svg' %}" width="400px" alt="LOGO-IMAGE" class="heading-img">
 <h1 class="heading-desc">Your Perfect Data Visualizer</h1>
 <div class="buttons-div">
     <!-- <button class="btn-arrow-left"><span class="fa fa-chevron-left"></span></button> -->
@@ -38,5 +38,7 @@
 
 {% block main-content %}
     <h1>Content</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unde saepe nostrum!
+    <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quod numquam quaerat a voluptas laudantium vero saepe corrupti facere veritatis possimus iste assumenda! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aut reiciendis eius quis nisi unde optio fugiat laudantium suscipit itaque. Autem dolore tenetur voluptatum consequuntur odio accusantium eum officia. Quasi, excepturi quas deserunt quae provident vel aut minima maiores fugiat obcaecati vitae rem hic nulla inventore alias odit eveniet corporis cumque cum sed accusamus voluptate suscipit velit ratione vero optio ipsam voluptatem ipsa nemo veritatis dolore ea minus delectus placeat quo est sint? Animi, similique, saepe, eaque quasi aspernatur voluptatem consectetur velit aut fugiat voluptatum quam illum expedita sunt? Illo corporis doloribus dolores consequatur similique sunt atque unde saepe nostrum!
+    </div>
 {% endblock %}

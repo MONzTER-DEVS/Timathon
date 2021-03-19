@@ -71,7 +71,27 @@ body {
 }
 .body-container{
     flex-direction: column;
-    margin-top: 15vh;
+    position: absolute;
+    top: 120vh;
+    /* margin-top: 15vh; */
+    margin: 2.5em;
+    padding: 2.5em;
+    border-radius: 10px;
+    text-shadow: 0 0 10px black;
+    background-image: linear-gradient( 45deg , rgba(255, 255, 255, 0.25) , rgba(255, 255, 255, 0.5) );
+    backdrop-filter: blur(2.5px);
+}
+
+/* Content */
+h1 {
+    color: #FFFFFF;
+    margin: 5em;
+    margin-top: 1em;
+    text-shadow: 0 0 10px black;
+}
+
+.content {
+    color: #FFFFFF;
 }
 
 /* Utility Classes */
@@ -87,4 +107,8 @@ body {
 .flex{
     display: flex;
     align-items: center;
+}
+
+span {
+    margin: 5px;
 }
