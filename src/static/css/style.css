@@ -115,7 +115,8 @@ body {
 /*Divs*/
 
 .component-inner-div {
-    margin: 0 100px;
+    margin: 0 20px;
+    width: 600px;
     padding: 10px 20px;
     background-color: white;
     opacity: 0.7;
