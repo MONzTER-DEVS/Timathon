@@ -31,10 +31,12 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<!--Header-Navbar-->
 <header class="body-header">
     {% block header %}{% endblock %}
 </header>
 
+<!--Home Page-->
 <div class="body-container-bg flex" data-aos="fade-up" data-aos-duration="1000">
     {% block main-bg %}{% endblock %}
 </div>
@@ -44,6 +46,12 @@
 <div class="body-footer flex">
     {% block footer %}{% endblock %}
 </div>
+
+<!--Components Page-->
+<div class="body-container-components flex">
+    {% block components-content %}{% endblock %}
+</div>
+
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->

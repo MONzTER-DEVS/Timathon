@@ -1,12 +1,12 @@
 /*CSS RESET*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /*Text*/
-.heading-brand{
+.heading-brand {
     display: flex;
     position: relative;
     margin-top: 25vh;
@@ -17,7 +17,7 @@
     text-shadow: 0 0 0.5em #342E37;
 }
 
-.heading-desc{
+.heading-desc {
     margin: 1px 0;
     font-family: 'Lobster', cursive;
     font-size: 2em;
@@ -37,6 +37,7 @@
 .heading-feature {
     font-family: "Baloo Bhai 2", cursive;
 }
+
 .footer-heading {
     position: absolute;
     font-family: 'Baloo Bhai 2', cursive;
@@ -83,12 +84,14 @@ body {
 
 /*Divs*/
 
-.feature-three-text-div{
+.feature-three-text-div {
     margin-right: 211px;
 }
-.bg-div{
+
+.bg-div {
     flex-direction: column;
 }
+
 .feature-one {
     margin-bottom: 200px;
 }
