@@ -9,7 +9,7 @@ def index(request):
 
 
 def components(request):
-    return render(request, '../templates/home/components.html')
+    return render(request, '../templates/components/components.html')
 
 
 def favourites(request):

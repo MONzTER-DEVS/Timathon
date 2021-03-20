@@ -6,6 +6,28 @@
 }
 
 /*Text*/
+.para-components {
+    color: black;
+    text-align: justify;
+    font-family: 'Recursive', cursive;
+
+}
+
+.heading-components-inner {
+    font-family: 'Recursive', cursive;
+    color: #e0626a;
+    text-align: center;
+}
+
+.heading-components {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 50px;
+    color: #EE964B;
+}
+
 .heading-brand {
     display: flex;
     position: relative;
@@ -66,6 +88,14 @@
 }
 
 /* Images */
+.component-table {
+
+}
+
+.component-chart {
+    margin: auto;
+}
+
 .heading-img {
     width: 300px;
     display: flex;
@@ -83,6 +113,33 @@ body {
 
 
 /*Divs*/
+
+.component-inner-div {
+    margin: 0 100px;
+    padding: 10px 20px;
+    background-color: white;
+    opacity: 0.7;
+    box-shadow: 0 0 10px black;
+    transition: all 0.2s ease-in-out
+}
+
+#first-component {
+    padding: 22px 25px;
+}
+
+.component-inner-div:hover {
+    box-shadow: 0 0 10px black, 0 0 40px black, 0 0 80px black;
+
+}
+
+
+.container-components {
+    width: 100vw;
+    /*margin-top: 100px;*/
+    justify-content: center;
+    align-items: center;
+}
+
 .form-div {
     display: flex;
     align-items: center;

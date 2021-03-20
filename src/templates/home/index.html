@@ -10,7 +10,7 @@
                 <embed src="{% static 'images\logo.svg' %}" alt="LOGO-IMAGE" id="navbar-logo">
             </div>
 <!--            <li class="navbar-brand flex underline-brand"><a class="navbar-brand-link bold" href="#">MENTIS OCULI</a></li>-->
-            <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link" href="#">Home</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:index' %}">Home</a></li>
             <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:components' %}">Components</a></li>
             <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:favourites' %}">Favourites</a></li>
 

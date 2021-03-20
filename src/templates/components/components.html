@@ -1,0 +1,85 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block title %}Mentis Oculi | Components{% endblock %}
+
+{% block header %}
+<nav class="navbar-header flex">
+    <div class="navbar-div">
+        <ul class="navbar-list flex">
+            <div class="navbar-logo-div">
+                <embed src="{% static 'images\logo.svg' %}" alt="LOGO-IMAGE" id="navbar-logo">
+            </div>
+            <!--            <li class="navbar-brand flex underline-brand"><a class="navbar-brand-link bold" href="#">MENTIS OCULI</a></li>-->
+            <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link"
+                                            href="{% url 'home:index' %}">Home</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex"
+                                            href="{% url 'home:components' %}">Components</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex"
+                                            href="{% url 'home:favourites' %}">Favourites</a></li>
+
+            {% if user.is_authenticated %}
+            <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
+                <span class="fa fa-sign-in"> </span> Sign out
+            </button>
+
+            <div id="welcome-user">
+                Hi, {{ user.first_name }}
+            </div>
+
+            {% else %}
+            <li class="navbar-list-item">
+                <button class="flex navbar-button" id="navbar-signin" href="#"><span class="fa fa-sign-in"> </span>Signin
+                </button>
+            </li>
+
+            <li class="navbar-list-item">
+                <button class="flex navbar-button" id="navbar-signup" href="#" onclick="location.href='/signup'">
+                    <span class="fa fa-user"></span> Signup
+                </button>
+            </li>
+
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block components-content %}
+<div class="container-components" data-aos="fade-up" data-aos-duration="1000">
+    <div class="heading-components">
+        Analyze Your Data
+    </div>
+    <div class="container-components flex">
+        <div class="component-inner-div" id="first-component">
+            <h1 class="heading-components-inner">Through A Table</h1>
+            <center><embed src="{% static 'images\components\tables.svg' %}" width="300px" height="200px"
+                   alt=""
+                   class="component-table"></center>
+            <p class="para-components">
+                The data table consists of a series of columns and rows that intersect in cells, plus a header row in
+                which the names of the columns are stated, to make the content of the table understandable to the end
+                user.
+            </p>
+            <button class="button-components">Continue</button>
+        </div>
+        <div class="component-inner-div">
+            <h1 class="heading-components-inner">Through Charts</h1>
+            <center><embed src="{% static 'images\components\charts.svg' %}" width="300px" height="200px"
+                   alt=""
+                           class="component-chart"></center>
+            <br>
+
+            <p class="para-components">A chart is a visual presentation of data. A chart can convey what is usually a
+                table with rows of numbers
+                in a picture. This allows the viewer to quickly grasp comparisons and trends more easily than looking at
+                the raw data.</p>
+            <button class="button-components">Continue</button>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
