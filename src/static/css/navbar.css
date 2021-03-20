@@ -64,7 +64,7 @@
 
 .navbar-list-link:hover {
     color: black;
-    text-shadow: 0 0 1em #32D2B5, 0 0 1.25em #32D2B5, 0 0 1.5em #32D2B5;
+    text-shadow: 0 0 0.25em black, 0 0 1em #32D2B5, 0 0 1.25em #32D2B5, 0 0 1.5em #32D2B5;
 }
 
 .navbar-list {
@@ -86,4 +86,41 @@
     position: absolute;
     right: 140px;
     top: 40px;
+}
+
+#navbar-signout {
+    position: absolute;
+    right: 20px;
+    /*top: 20px;  */
+    top: 40px;
+}
+
+/* #welcome-user {
+    color: #CD5D67;
+    font-family: 'Recursive', sans-serif;
+    font-size: 25px;
+    /* padding: 50px;
+    position: absolute;
+    right: 150px;
+    text-shadow: 0 0 1em #CD5D67, 0 0 1em #CD5D67;
+    transition: 0.25s text-shadow;
+} */
+
+#welcome-user {
+    font-family: 'Baloo Bhai 2', cursive;
+    text-decoration: none;
+    position: absolute;
+    right: 150px;
+    /*height: 80px;*/
+    margin: 0 20px;
+    text-shadow: 1px 1px 2px black;
+    color: #32D2B5;
+    font-size: 25px;
+    transition: all 0.2s ease-in-out;
+    cursor: default;
+}
+
+#welcome-user:hover {
+    color: black;
+    text-shadow: 0 0 0.25em black, 0 0 1em #32D2B5, 0 0 1.25em #32D2B5, 0 0 1.5em #32D2B5;
 }
