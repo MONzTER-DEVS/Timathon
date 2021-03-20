@@ -118,3 +118,6 @@
     background-color: #EE964B;
     color: black;
 }
+.signup-button{
+    cursor: pointer;
+}
