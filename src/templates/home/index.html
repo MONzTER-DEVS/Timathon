@@ -106,8 +106,21 @@
 {% endblock %}
 
 {% block footer %}
-<div class="footer-div" data-aos="fade-up" data-aos-duration="1000">
-<h1 class="footer-heading">So, What's The Delay For?</h1>
-<h2 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h2>
+<div class="footer-div">
+    <h1 class="footer-heading" data-aos="fade-right" data-aos-duration="1000">So, What's The Delay For?</h1>
+    <div class="form-div" data-aos="fade-right" data-aos-duration="1000">
+        <form action="">
+            <label for="name" id="label-name">Name:</label>
+            <input type="text" placeholder="Name" name="name" id="name"><br>
+            <label for="username" id="label-username">Username:</label>
+            <input type="text" placeholder="Username" id="username"><br>
+            <label for="password1" id="label-password1">Password:</label>
+            <input type="text" placeholder="Password" id="password1"><br><br>
+            <label for="password2" id="label-password2">Confirm Password:</label>
+            <input type="text" id="password2" placeholder="Confirm Password"><br><br>
+            <button class="form-submit">Submit</button>
+        </form>
+    </div>
+    <h2 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h2>
 </div>
 {% endblock %}

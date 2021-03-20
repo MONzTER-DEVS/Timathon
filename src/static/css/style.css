@@ -50,7 +50,7 @@
     font-family: 'Baloo Bhai 2', cursive;
     color: #EE964B;
     position: absolute;
-    top: 460vh;
+    top: 520vh;
     left: 28vw;
     text-shadow: 0 0 10px black;
 }
@@ -83,6 +83,16 @@ body {
 
 
 /*Divs*/
+.form-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: 460vh;
+    justify-content: center;
+    left: 37vw;
+    position: absolute;
+    padding: 20px 20px;
+    }
 
 .feature-three-text-div {
     margin-right: 211px;
@@ -104,6 +114,9 @@ body {
     margin-bottom: 200px;
 }
 
+/*.body-footer{*/
+/*    margin-bottom: 200px;*/
+/*}*/
 
 .body-container-bg {
     display: flex;
@@ -178,4 +191,66 @@ span {
 ::-webkit-scrollbar-thumb {
     background: #cec9c9;
     border-radius: 12px;
+}
+
+/*Forms*/
+
+.form-div form input::placeholder{
+    color: #bdb5b5;
+    font-size: 20px;
+    font-family: 'Recursive', cursive;
+}
+
+.form-div form input{
+    color: white;
+    margin: 10px 20px;
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #EE964B;
+    font-family: 'Recursive', cursive;
+    font-size: 20px;
+    outline: none;
+}
+
+.form-div form label{
+    font-family: 'Recursive', cursive;
+    font-size: 20px;
+    /*color: #EE964B;*/
+
+}
+
+#label-username{
+    position: absolute;
+    right: 345px;
+    top: 85px;
+}
+
+#username{
+    position: absolute;
+    top: 70px;
+    right: 21px;
+}
+
+#label-password1{
+    position: absolute;
+    right: 345px;
+    top: 135px;
+}
+
+#password1{
+    position: absolute;
+    top: 120px;
+    right: 21px;
+}
+
+#label-password2{
+    position: absolute;
+    right: 345px;
+    top: 185px;
+}
+
+#password2{
+    position: absolute;
+    top: 170px;
+    right: 21px;
 }

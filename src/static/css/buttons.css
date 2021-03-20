@@ -97,27 +97,27 @@
     color: #9e9898;
 }
 
-.btn-feedback {
-    font-size: 16px;
-    font-family: 'Baloo Bhai 2', cursive;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+.signup-button{
+    cursor: pointer;
+}
+
+.form-submit{
     background: transparent;
     border: 2px solid #EE964B;
     border-radius: 10px;
     padding: 5px 10px;
     margin: 10px 0;
+    transition: all 0.2s ease-in-out;
+    font-family: 'Recursive', cursive;
+    /*color: #32d2b5;*/
     color: #EE964B;
-    text-shadow: 0 0 0.5em black;
-    transition: all 0.4s ease-in-out;
-
+    position: absolute;
+    right: 300px;
+    top: 270px;
 }
 
-.btn-feedback:hover {
+.form-submit:hover{
+    color: white;
+    border-color: white;
     background-color: #EE964B;
-    color: black;
-}
-.signup-button{
-    cursor: pointer;
 }
