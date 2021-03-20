@@ -1,10 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'users/base.html' %}
+{% load static %}
+{% block title %}{{ title}}{% endblock %}
+{% block Form %}
 
-</body>
-</html>
+    <form action="" method="post" onSubmit = "return checkPassword(this)">
+        {% csrf_token %}
+        <div class="section">Registration Form</div>
+        <div class="inner-wrap">
+            <label>Name <input type="text" name="name" required></label>
+            <label>Username <input type="text" name="username" required></label>
+            <label>Password <input type="password" name="password" id="pass1" required></label>
+            <label>Confirm Password <input type="password" name="confirm_password" id="pass2" required></label>
+        </div>
+
+        <div class="button-section">
+            <input type="submit" name="Sign Up" />
+
+        <!--
+        <span class="privacy-policy">
+            <label>
+                <input type="checkbox" name="terms"> You agree to our Terms of usage.
+            </label>
+        </span>
+        -->
+
+        </div>
+
+        <!-- This error is for client side errors-->
+        <div class="error" id="error" style="display: none">Error message</div>
+
+
+        <!-- This error is for server side errors-->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="{{ message.tags }}"> {{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+
+    </form>
+        <script src="{% static 'js/registration.js' %}">
+        </script>
+
+{% endblock %}
+
+{% block outside_form %}
+{% endblock %}

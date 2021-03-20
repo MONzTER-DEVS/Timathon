@@ -9,27 +9,27 @@
 .info {
 	color: #00529B;
 	background-color: #BDE5F8;
-	background-image: url('/static/imgs/messages/info.png');
+	background-image: url('../images/messages/info.png');
 }
 .success {
 	color: #4F8A10;
 	background-color: #DFF2BF;
-	background-image: url('/static/imgs/messages/success.png');
+	background-image: url('../images/messages/success.png');
 }
 .warning {
 	color: #9F6000;
 	background-color: #FEEFB3;
-	background-image: url('/static/imgs/messages/warning.png');
+	background-image: url('../images/messages/warning.png');
 }
 
 .error{
 	color: #D8000C;
 	background-color: #FFBABA;
-	background-image: url('/static/imgs/messages/error.png');
+	background-image: url('../images/messages/error.png');
 }
 
 .validation{
 	color: #D63301;
 	background-color: #FFCCBA;
-	background-image: url('/static/imgs/messages/error.png');
+	background-image: url('../images/messages/error.png');
 }
