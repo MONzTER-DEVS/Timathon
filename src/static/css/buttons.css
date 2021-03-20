@@ -23,9 +23,9 @@
 
 .navbar-button:hover{
     background-color: #CD5D67;
-    box-shadow: 0 0 10px #CD5D67, 0 0 40px #CD5D67, 0 0 80px #CD5D67;
+    /*box-shadow: 0 0 10px #CD5D67, 0 0 40px #CD5D67, 0 0 80px #CD5D67;*/
     color: black;
-    text-shadow: 0 0 1em black, 0 0 1em black;
+    /*text-shadow: 0 0 1em black, 0 0 1em black;*/
 }
 
 .btn-get-started{
