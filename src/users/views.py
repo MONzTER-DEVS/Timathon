@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, logout
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -23,9 +27,14 @@ def register(request):
 
         user = User.objects.create_user(username=username, password=password, first_name=name)
         user.save()
-
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
 
         return redirect("home:index")
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('home:index'))
