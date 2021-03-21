@@ -113,6 +113,15 @@ body {
 
 
 /*Divs*/
+.form-div-table{
+    position: absolute;
+    top: 20vh;
+}
+
+.result-form-table{
+    position: absolute;
+    top: 25vh;
+}
 
 .component-inner-div {
     margin: 0 20px;
