@@ -31,7 +31,18 @@ def register(request):
         if user is not None:
             auth.login(request, user)
 
-        return redirect("home:index")
+        return redirect("/")
+
+
+def sign_in(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = auth.authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+
+        return redirect("/#end")
 
 
 @login_required

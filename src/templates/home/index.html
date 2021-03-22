@@ -2,8 +2,12 @@
 {% load static %}
 {% block title %}Mentis Oculi | Your Perfect Data Visualizer{% endblock %}
 
+{% block head_links %}
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+
 {% block header %}
-<nav class="navbar-header flex">
+    <nav class="navbar-header flex">
     <div class="navbar-div">
         <ul class="navbar-list flex">
             <div class="navbar-logo-div">
@@ -25,11 +29,11 @@
 
             {% else %}
                 <li class="navbar-list-item">
-                    <button class="flex navbar-button" id="navbar-signin" href="#"><span class="fa fa-sign-in"> </span>Signin</button>
+                    <button class="flex navbar-button" id="navbar-signin" href="#" onclick="show_login_form()"><span class="fa fa-sign-in"> </span>Signin</button>
                 </li>
 
                 <li class="navbar-list-item">
-                    <button class="flex navbar-button" id="navbar-signup" href="#" onclick="location.href='/signup'">
+                    <button class="flex navbar-button" id="navbar-signup" href="#" onclick="show_register_form()">
                         <span class="fa fa-user"></span> Signup
                     </button>
                 </li>
@@ -106,21 +110,67 @@
 {% endblock %}
 
 {% block footer %}
-<div class="footer-div">
-    <h1 class="footer-heading" data-aos="fade-right" data-aos-duration="1000">So, What's The Delay For?</h1>
-    <div class="form-div" data-aos="fade-right" data-aos-duration="1000">
-        <form action="">
-            <label for="name" id="label-name">Name:</label>
-            <input type="text" placeholder="Name" name="name" id="name"><br>
-            <label for="username" id="label-username">Username:</label>
-            <input type="text" placeholder="Username" id="username"><br>
-            <label for="password1" id="label-password1">Password:</label>
-            <input type="text" placeholder="Password" id="password1"><br><br>
-            <label for="password2" id="label-password2">Confirm Password:</label>
-            <input type="text" id="password2" placeholder="Confirm Password"><br><br>
-            <button class="form-submit">Submit</button>
-        </form>
-    </div>
+<div class="footer-div" id="footerDiv">
+    <h1 class="footer-heading" data-aos="fade-right" data-aos-duration="1000">
+        So, What's The Delay For?
+    </h1>
+
+    {% if user.is_authenticated %}
+
+        <div class="form-div" data-aos="fade-right" data-aos-duration="1000">
+            <form action="components" method="get">
+                <button class="form-submit">continue</button>
+
+            </form>
+        </div>
+
+    {% else %}
+
+        <div class="form-div" data-aos="fade-right" data-aos-duration="1000">
+            <div id="registerFormDiv">
+                <form action="/signup/" method="post" id="registerForm">
+                    {% csrf_token %}
+                    <label for="name" id="label-name">Name:</label>
+                        <input type="text" placeholder="Name" name="name" id="name"><br>
+
+                    <label for="username" id="label-username">Username:</label>
+                        <input type="text" placeholder="Username" id="username" name="username"><br>
+
+                    <label for="password1" id="label-password1">Password:</label>
+                        <input type="text" placeholder="Password" id="password1" name="password"><br><br>
+
+                    <label for="password2" id="label-password2">Confirm Password:</label>
+                        <input type="text" id="password2" placeholder="Confirm Password" name="confirm_password"><br><br>
+
+                    <button class="form-submit" style="margin-right: 50%"> submit </button>
+
+                </form>
+
+                <button class="form-submit" onclick="show_login_form()">
+                    Already registered ?
+                </button>
+            </div>
+
+            <div id="loginFormDiv" style="display: none">
+                <form action="/signin/" method="post" id="registerForm">
+                    {% csrf_token %}
+
+                    <label for="username" id="label-username">Username:</label>
+                        <input type="text" placeholder="Username" id="username" name="username"><br>
+
+                    <label for="password1" id="label-password1">Password:</label>
+                        <input type="text" placeholder="Password" id="password1" name="password"><br><br>
+
+                    <button class="form-submit" style="margin-right: 50%"> submit </button>
+                 </form>
+                <button class="form-submit" onclick="show_register_form()">
+                    New to Mentis Oculi ?
+                </button>
+
+            </div>
+        </div>
+    {% endif %}
+
     <h2 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h2>
 </div>
 {% endblock %}

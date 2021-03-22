@@ -29,6 +29,13 @@
     <!--title block -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <title>{% block title %}{% endblock %}</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    {% block head_links %} {% endblock %}
 </head>
 <body>
 <!--Header-Navbar-->
