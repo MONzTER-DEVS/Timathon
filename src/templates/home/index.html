@@ -29,13 +29,13 @@
 
             {% else %}
                 <li class="navbar-list-item">
-                    <button class="flex navbar-button" id="navbar-signin" href="#" onclick="show_login_form()"><span class="fa fa-sign-in"> </span>Signin</button>
+                    <a class="flex navbar-button" id="navbar-signin" href="#loginFormDiv" onclick="show_login_form()"><span class="fa fa-sign-in"> </span>Signin</a>
                 </li>
 
                 <li class="navbar-list-item">
-                    <button class="flex navbar-button" id="navbar-signup" href="#" onclick="show_register_form()">
+                    <a class="flex navbar-button" id="navbar-signup" href="#registerFormDiv" onclick="show_register_form()">
                         <span class="fa fa-user"></span> Signup
-                    </button>
+                    </a>
                 </li>
 
             {% endif %}
@@ -142,30 +142,30 @@
                     <label for="password2" id="label-password2">Confirm Password:</label>
                         <input type="text" id="password2" placeholder="Confirm Password" name="confirm_password"><br><br>
 
-                    <button class="form-submit" style="margin-right: 50%"> submit </button>
+                    <button class="form-submit" style="position: absolute; right: 30vh; top: 40vh;"> Submit </button>
 
                 </form>
 
-                <button class="form-submit" onclick="show_login_form()">
+                <a href="#loginFormDiv" style="text-decoration: none; position: absolute; top: 35vh; right: 28vh; color: black; font-family: 'Recursive', cursive;" onclick="show_login_form()">
                     Already registered ?
-                </button>
+                </a>
             </div>
 
             <div id="loginFormDiv" style="display: none">
-                <form action="/signin/" method="post" id="registerForm">
+                <form action="/signin/" method="post" id="loginForm">
                     {% csrf_token %}
 
-                    <label for="username" id="label-username">Username:</label>
-                        <input type="text" placeholder="Username" id="username" name="username"><br>
+                    <label for="username" id="label-username-login">Username:</label>
+                        <input type="text" placeholder="Username" id="username-login" name="username"><br>
 
-                    <label for="password1" id="label-password1">Password:</label>
-                        <input type="text" placeholder="Password" id="password1" name="password"><br><br>
+                    <label for="password1" id="label-password1-login">Password:</label>
+                        <input type="text" placeholder="Password" id="password1-login" name="password"><br><br>
 
-                    <button class="form-submit" style="margin-right: 50%"> submit </button>
+                    <button class="form-submit" style="position: absolute; right: 35vh; top: 25vh;"> Submit </button>
                  </form>
-                <button class="form-submit" onclick="show_register_form()">
+                <a href="#registerForm" style="text-decoration: none; position: absolute; top: 20vh; right: 28vh; color: black; font-family: 'Recursive', cursive;" onclick="show_register_form()">
                     New to Mentis Oculi ?
-                </button>
+                </a>
 
             </div>
         </div>
