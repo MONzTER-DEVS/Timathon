@@ -46,10 +46,7 @@
 
 {% block Form %}
     {% csrf_token %}
-    <input type="file" name="datafile">
+    {{form.as_p}}
     <button type="submit">Submit</button>
 {% endblock %}
 
-{% block Result %}
-    {{result}}
-{% endblock %}
