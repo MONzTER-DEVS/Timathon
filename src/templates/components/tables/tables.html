@@ -57,16 +57,19 @@
             {% for item in data %}
             <th>{{ item }}</th>
             {% endfor %}
+            <th>Manipulations</th>
         </tr>
     </thead>
     <tbody>
-        {% for _, record in data.iterrows %}
-            <tr>
-                {% for value in record %}
-                    <td>{{ value }}</td>
-                {% endfor %}
-            </tr>
+    {% for _, record in data.iterrows %}
+    <tr>
+        {% for value in record %}
+        <td>{{ value }}</td>
         {% endfor %}
+        <td align="center"><button class="btn btn-primary"><span class="fa fa-pencil-square-o"></span>Edit</button>        <button class="btn btn-danger"><span class="fa fa-remove"></span>Delete</button></td>
+    </tr>
+    {% endfor %}
     </tbody>
 </table>
+<button class="btn btn-success"><span class="fa fa-plus"></span>Add A Record</button>
 {% endblock %}
