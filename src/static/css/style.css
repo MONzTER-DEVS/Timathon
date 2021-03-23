@@ -125,9 +125,9 @@ html, body {
 .result-form-table {
     margin-top: 132px;
     margin-right: 200px;
-    display: flex;
+    /*display: flex;*/
     margin-left: 200px;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 .component-inner-div {
