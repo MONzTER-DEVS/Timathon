@@ -4,6 +4,7 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 import pandas as pd
 import os
+from timathon.settings import MEDIA_ROOT
 # Create your views here.
 
 
@@ -48,7 +49,8 @@ def tables(request):
             fs = FileSystemStorage()
             fs.save(uploaded_file.name, uploaded_file)
             form.save()
-            data = pd.read_csv(os.path.join('media', uploaded_file.name))
+            data = pd.read_csv(os.path.join(MEDIA_ROOT, uploaded_file.name))
+            print(os.path.join('media', uploaded_file.name))
             print(data)
     else:
         data = None
