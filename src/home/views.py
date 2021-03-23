@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import TableDataForm
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
-
+import pandas as pd
 # Create your views here.
 
 
@@ -39,6 +39,7 @@ def charts(request):
 
 
 def tables(request):
+    data = None
     if request.method == 'POST':
         form = TableDataForm(request.FILES)
         if form.is_valid():
@@ -46,6 +47,11 @@ def tables(request):
             fs = FileSystemStorage()
             fs.save(uploaded_file.name, uploaded_file)
             form.save()
+            data = pd.read_csv(f'media/{uploaded_file}')
+            print(data)
     else:
+        data = None
         form = TableDataForm()
-    return render(request, '../templates/components/tables/tables.html', {"form": form})
+    context = {"form": form,
+               "data": data}
+    return render(request, '../templates/components/tables/tables.html', context)

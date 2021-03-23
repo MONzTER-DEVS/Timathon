@@ -45,8 +45,28 @@
 {% endblock %}
 
 {% block Form %}
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Submit</button>
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit">Submit</button>
 {% endblock %}
 
+{% block Result %}
+<table border="2px" bgcolor="white">
+    <thead>
+        <tr>
+            {% for item in data %}
+            <th>{{ item }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for _, record in data.iterrows %}
+            <tr>
+                {% for value in record %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
