@@ -20,7 +20,7 @@
 }
 
 .heading-components {
-    margin-top: 100px;
+    margin-top: 36px;
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Baloo Bhai 2', cursive;
@@ -111,6 +111,10 @@ body {
     background-position: top;
 }
 
+html, body {
+    width: 100%;
+}
+
 
 /*Divs*/
 .form-div-table{
@@ -118,9 +122,12 @@ body {
     top: 20vh;
 }
 
-.result-form-table{
-    position: absolute;
-    top: 25vh;
+.result-form-table {
+    margin-top: 132px;
+    margin-right: 200px;
+    display: flex;
+    margin-left: 200px;
+    align-items: center;
 }
 
 .component-inner-div {
@@ -316,8 +323,10 @@ span {
     top: 185px;
 }
 
-#password2{
+#password2 {
     position: absolute;
     top: 170px;
     right: 21px;
 }
+
+/*Tables*/

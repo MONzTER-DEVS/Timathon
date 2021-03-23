@@ -31,3 +31,4 @@ function show_login_form() {
     change_element_display_prop('loginFormDiv')
 }
 show_register_form();
+

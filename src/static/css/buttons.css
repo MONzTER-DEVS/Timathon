@@ -115,10 +115,27 @@
     right: 300px;
     top: 270px;
 }
+.form-submit-continue{
+    background: transparent;
+    border: 2px solid #EE964B;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    transition: all 0.2s ease-in-out;
+    font-family: 'Recursive', cursive;
+    /*color: #32d2b5;*/
+    color: #EE964B;
+    position: absolute;
+    right: -12vw;
+    top: 270px;
+}
+.form-submit-continue:hover{
+    color: white;
+    background-color: #EE964B;
+}
 
 .form-submit:hover{
     color: white;
-    border-color: white;
     background-color: #EE964B;
 }
 
