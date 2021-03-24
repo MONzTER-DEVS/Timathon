@@ -165,8 +165,8 @@
 }
 
 #selector-label{
-    margin: 0 61vh;
-    padding: 16px 48px;
+    margin: 0px 78vh;
+    padding: 10px 132px;
     border: 3px solid #EE964B;
     border-radius: 48px;
     text-transform: uppercase;
@@ -189,9 +189,33 @@
 #selector-label.active {
     background-color: transparent;
     color: black;
+    padding: 10px 50px;
+
 }
 
 
 label[for="file-upload"] {
     /*visibility: hidden;/*/
+}
+
+.form-submit-button {
+    margin: 20px auto;
+    padding: 14px 226px;
+    border: 3px solid #EE964B;
+    border-radius: 48px;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #EE964B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-submit-button:hover {
+    background-color: #EE964B;
+    color: white;
 }
