@@ -6,5 +6,5 @@ var fileUpload = function (e) {
     output.classList.add('active');
 };
 
-let fileInput = document.getElementById('file-upload');
+let fileInput = document.getElementById('file-upload-id');
 fileInput.addEventListener('change', fileUpload);
