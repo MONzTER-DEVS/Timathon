@@ -119,7 +119,8 @@ html, body {
 /*Divs*/
 .form-div-table{
     position: absolute;
-    top: 20vh;
+    top: 40vh;
+    width: 100%;
 }
 
 .result-form-table {
@@ -155,6 +156,13 @@ html, body {
     /*margin-top: 100px;*/
     justify-content: center;
     align-items: center;
+}
+.form-text{
+    text-align: center;
+    margin: 36px;
+    font-family: 'Recursive',cursive;
+    font-size: 20px;
+    color: #EE964B;
 }
 
 .form-div {

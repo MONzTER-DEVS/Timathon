@@ -47,7 +47,11 @@
 {% block Form %}
 
 {% csrf_token %}
+<div class="form-div-p" hidden>
 {{form.as_p}}
-<p>Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic!</p>
-<button type="submit">Submit</button>
+
+</div>
+<label for="file-upload" id="selector-label">Select File</label>
+<p class="form-text">Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic!</p>
+<button type="submit" class="form-submit-button">Submit</button>
 {% endblock %}

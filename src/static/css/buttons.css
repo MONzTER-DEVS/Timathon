@@ -159,3 +159,39 @@
     border-color: white;
     background-color: #EE964B;
 }
+
+.file-upload-btn{
+    visibility: hidden;
+}
+
+#selector-label{
+    margin: 0 61vh;
+    padding: 16px 48px;
+    border: 3px solid #EE964B;
+    border-radius: 48px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #EE964B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#selector-label:hover{
+    transform: scale(1.04);
+    color: white;
+    background-color: #EE964B;
+}
+
+#selector-label.active {
+    background-color: transparent;
+    color: black;
+}
+
+
+label[for="file-upload"] {
+    /*visibility: hidden;/*/
+}
