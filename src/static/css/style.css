@@ -61,19 +61,13 @@
 }
 
 .footer-heading {
-    position: absolute;
     font-family: 'Baloo Bhai 2', cursive;
     text-shadow: 0 0 10px black;
-    top: 450vh;
-    left: 35vw;
 }
 
 .footer-heading-two {
     font-family: 'Baloo Bhai 2', cursive;
     color: #EE964B;
-    position: absolute;
-    top: 510vh;
-    left: 28vw;
     text-shadow: 0 0 10px black;
 }
 
@@ -169,12 +163,13 @@ html, body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    top: 460vh;
+    left: 45vh;
     justify-content: center;
-    left: 37vw;
+    top: 450vh;
     position: absolute;
     padding: 20px 20px;
-    }
+    transform: translate(50%, 50%);
+}
 
 .feature-three-text-div {
     margin-right: 211px;

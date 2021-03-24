@@ -111,23 +111,27 @@
 
 {% block footer %}
 <div class="footer-div" id="footerDiv">
-    <h1 class="footer-heading" data-aos="fade-right" data-aos-duration="1000">
-        So, What's The Delay For?
-    </h1>
+    <!--    <h1 class="footer-heading" data-aos="fade-right" data-aos-duration="1000">-->
+    <!--        So, What's The Delay For?-->
+    <!--    </h1>-->
 
     {% if user.is_authenticated %}
 
-        <div class="form-div" data-aos="fade-right" data-aos-duration="1000">
-            <form action="components" method="get">
-                <button class="form-submit-continue">Continue</button>
+    <div class="form-div" data-aos="fade-right" data-aos-duration="1000">
+        <h1 class="footer-heading">So, What's The Delay For?
+        </h1>
+        <form action="components" method="get">
+            <button class="form-submit">Continue</button>
+        </form>
+        <h1 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h1>
 
-            </form>
-        </div>
+    </div>
 
     {% else %}
 
         <div class="form-div" data-aos="fade-right" data-aos-duration="1000">
             <div id="registerFormDiv">
+                <h1 class="footer-heading">So, What's The Delay For?</h1>
                 <form action="/signup/" method="post" id="registerForm">
                     {% csrf_token %}
                     <label for="name" id="label-name">Name:</label>
@@ -149,9 +153,12 @@
                 <a href="#loginFormDiv" class="form-alternate-sign-in-out" onclick="show_login_form()">
                     Already registered ?
                 </a>
+                <h1 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h1>
             </div>
 
             <div id="loginFormDiv" style="display: none">
+                <h1 class="footer-heading">So, What's The Delay For?</h1>
+
                 <form action="/signin/" method="post" id="loginForm">
                     {% csrf_token %}
 
@@ -166,6 +173,7 @@
                 <a href="#registerForm" class="form-alternate-sign-in-out" onclick="show_register_form()">
                     New to Mentis Oculi ?
                 </a>
+                <h1 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h1>
 
             </div>
         </div>
@@ -185,6 +193,6 @@
 
     {% endif %}
 
-    <h2 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h2>
+    <!--    <h2 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h2>-->
 </div>
 {% endblock %}
