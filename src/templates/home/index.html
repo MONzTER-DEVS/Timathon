@@ -142,11 +142,11 @@
                     <label for="password2" id="label-password2">Confirm Password:</label>
                         <input type="password" id="password2" placeholder="Confirm Password" name="confirm_password"><br><br>
 
-                    <button class="form-submit" style="position: absolute; right: 30vh; top: 40vh;"> Submit </button>
+                    <button class="form-submit"> Submit </button>
 
                 </form>
 
-                <a href="#loginFormDiv" style="text-decoration: none; position: absolute; top: 35vh; right: 28vh; color: black; font-family: 'Recursive', cursive;" onclick="show_login_form()">
+                <a href="#loginFormDiv" class="form-alternate-sign-in-out" onclick="show_login_form()">
                     Already registered ?
                 </a>
             </div>
@@ -156,14 +156,14 @@
                     {% csrf_token %}
 
                     <label for="username" id="label-username-login">Username:</label>
-                        <input type="text" placeholder="Username" id="username-login" name="username"><br>
+                    <input type="text" placeholder="Username" id="username-login" name="username"><br>
 
                     <label for="password1" id="label-password1-login">Password:</label>
-                        <input type="password" placeholder="Password" id="password1-login" name="password"><br><br>
+                    <input type="password" placeholder="Password" id="password1-login" name="password"><br><br>
 
-                    <button class="form-submit" style="position: absolute; right: 35vh; top: 25vh;" onclick=""> Submit </button>
+                    <button class="form-submit" onclick=""> Submit </button>
                  </form>
-                <a href="#registerForm" style="text-decoration: none; position: absolute; top: 20vh; right: 28vh; color: black; font-family: 'Recursive', cursive;" onclick="show_register_form()">
+                <a href="#registerForm" class="form-alternate-sign-in-out" onclick="show_register_form()">
                     New to Mentis Oculi ?
                 </a>
 
