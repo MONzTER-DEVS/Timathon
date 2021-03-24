@@ -50,21 +50,6 @@ def read_excel(fp):
     return all_rows
 
 
-# def tables(request):
-# parameters = {}
-# if request.method == 'POST':
-#     uploaded_file = request.FILES['datafile']
-#     if uploaded_file.name.endswith('.csv'):
-#         parameters = {'result': 'Correct File Uploaded'}
-#     else:
-#         parameters = {'result': 'Incorrect File Uploaded'}
-#     # print(uploaded_file.name)
-#     # print(uploaded_file.size)
-#     fs = FileSystemStorage()
-#     fs.save(uploaded_file.name, uploaded_file)
-# return render(request, '../templates/components/tables/tables.html', context=parameters)
-
-
 def tables(request):
     data = None
     if request.method == 'POST':
@@ -79,8 +64,9 @@ def tables(request):
                 data = pd.read_csv(os.path.join(MEDIA_ROOT, uploaded_file.name))
 
             elif fn.endswith('xls') or fn.endswith('xlsx'):
-                raw = read_excel(fn)
-                data = pd.DataFrame(raw)
+                # raw = read_excel(fn)
+                # data = pd.DataFrame(raw)
+                data = pd.read_excel(os.path.join(MEDIA_ROOT, uploaded_file.name))
 
             table_data.append(data)
             # time.sleep(2)
