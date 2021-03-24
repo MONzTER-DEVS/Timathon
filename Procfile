@@ -1,1 +1,1 @@
-web: gunicorn -c src timathon.wsgi --log-file -
+web: gunicorn --chdir src timathon.wsgi --log-file -
