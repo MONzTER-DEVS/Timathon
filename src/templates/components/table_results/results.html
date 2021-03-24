@@ -50,7 +50,8 @@
 {% endfor %}
 <a class="btn btn-primary" href="{% url 'home:tables' %}"><span class="fa fa-arrow-left"></span>Back To The Form</a>
 <br><br><br>
-<table align="center" class="table table-style table-bordered table-dark table-hover table-responsive" border="2px"
+<table id="table-id" align="center" class="table table-style table-bordered table-dark table-hover table-responsive"
+       border="2px"
        bgcolor="">
     <thead>
     <tr class="">
@@ -64,15 +65,31 @@
     {% for _, record in data.iterrows %}
     <tr>
         {% for value in record %}
-        <td>{{ value }}</td>
+        <td class="table-elements">{{ value }}</td>
         {% endfor %}
-        <td align="center">
-            <button class="btn btn-primary"><span class="fa fa-pencil-square-o"></span>Edit</button>
-            <button class="btn btn-danger"><span class="fa fa-remove"></span>Delete</button>
+        <td align="center" class="">
+            <button class="btn btn-primary" id="btn-edit"><span class="fa fa-pencil-square-o"></span>Edit</button>
+            <button class="btn btn-danger" id="btn-delete"><span class="fa fa-remove"></span>Delete</button>
         </td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
-<button class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record</button>
+<button data-model-target="#popup" class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record
+</button>
+{% endblock %}
+{% block PopUp %}
+<div class="popup-inner-div" id="popup">
+    <div class="popup-header">
+        <p class="title">Add A Record</p>
+        <button data-close-button class="close-popup"><span class="fa fa-times"></span></button>
+    </div>
+    <div class="popup-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, ab, porro, numquam fugiat deleniti a
+        impedit reprehenderit laborum totam similique maiores libero veniam in facere doloremque quidem ipsa neque
+        voluptas hic mollitia illum delectus corporis est! Molestias, dolorum, eveniet inventore nostrum accusantium
+        beatae hic exercitationem porro iste suscipit nesciunt vero?
+    </div>
+</div>
+<div id="overlay"></div>
 {% endblock %}

@@ -3,7 +3,7 @@ import os
 import openpyxl
 import time
 import pprint
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render
 from .forms import TableDataForm
 from django.http import HttpResponseRedirect
 from django.core.files.storage import FileSystemStorage
