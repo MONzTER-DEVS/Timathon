@@ -1,12 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from .forms import TableDataForm
+from django.http import HttpResponseRedirect
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 import pandas as pd
 import os
+from django.urls import reverse_lazy
 from timathon.settings import MEDIA_ROOT
 # Create your views here.
-
+table_data = []
 
 # the home page
 def index(request):
@@ -50,11 +52,15 @@ def tables(request):
             fs.save(uploaded_file.name, uploaded_file)
             form.save()
             data = pd.read_csv(os.path.join(MEDIA_ROOT, uploaded_file.name))
-            print(os.path.join('media', uploaded_file.name))
-            print(data)
+            table_data.append(data)
+            return HttpResponseRedirect(reverse_lazy('home:table_results'))
     else:
         data = None
         form = TableDataForm()
-    context = {"form": form,
-               "data": data}
+    context = {"form": form}
     return render(request, '../templates/components/tables/tables.html', context)
+
+
+def table_result(request):
+    context = {'data': table_data[-1]}
+    return render(request, '../templates/components/table_results/results.html', context)

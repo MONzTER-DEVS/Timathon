@@ -1,4 +1,4 @@
-{% extends 'components/tables/base.html' %}
+{% extends 'components/table_results/base.html' %}
 {% load static %}
 {% block header %}
 <nav class="navbar-header flex">
@@ -41,13 +41,33 @@
         </ul>
     </div>
 </nav>
-
 {% endblock %}
-
-{% block Form %}
-{% csrf_token %}
-{{form.as_p}}
-<button type="submit">Submit</button>
+{% block Result %}
+<a class="btn btn-primary" href="{% url 'home:tables' %}"><span class="fa fa-arrow-left" ></span>Back To The Form</a>
+<br><br><br>
+<table align="center" class="table table-style table-bordered table-dark table-hover table-responsive" border="2px"
+       bgcolor="">
+    <thead>
+    <tr class="">
+        {% for item in data %}
+        <th>{{ item }}</th>
+        {% endfor %}
+        <th class="table-manipulate">Manipulations</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for _, record in data.iterrows %}
+    <tr>
+        {% for value in record %}
+        <td>{{ value }}</td>
+        {% endfor %}
+        <td align="center">
+            <button class="btn btn-primary"><span class="fa fa-pencil-square-o"></span>Edit</button>
+            <button class="btn btn-danger"><span class="fa fa-remove"></span>Delete</button>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<button class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record</button>
 {% endblock %}
-
-
