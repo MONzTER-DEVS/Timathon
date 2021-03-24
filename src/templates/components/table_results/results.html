@@ -43,7 +43,12 @@
 </nav>
 {% endblock %}
 {% block Result %}
-<a class="btn btn-primary" href="{% url 'home:tables' %}"><span class="fa fa-arrow-left" ></span>Back To The Form</a>
+{% for message in messages %}
+    <div class="alert alert-{{message.tags}}" role="alert">
+      <strong>Hurrah:</strong> {{message}}
+    </div>
+{% endfor %}
+<a class="btn btn-primary" href="{% url 'home:tables' %}"><span class="fa fa-arrow-left"></span>Back To The Form</a>
 <br><br><br>
 <table align="center" class="table table-style table-bordered table-dark table-hover table-responsive" border="2px"
        bgcolor="">

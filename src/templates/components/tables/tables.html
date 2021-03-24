@@ -45,9 +45,9 @@
 {% endblock %}
 
 {% block Form %}
+
 {% csrf_token %}
 {{form.as_p}}
+<p>Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic!</p>
 <button type="submit">Submit</button>
 {% endblock %}
-
-

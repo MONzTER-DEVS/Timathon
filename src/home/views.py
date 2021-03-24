@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import openpyxl
+import time
 import pprint
 from django.shortcuts import render, redirect, reverse
 from .forms import TableDataForm
@@ -9,6 +10,7 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from timathon.settings import MEDIA_ROOT
+from django.contrib import messages
 
 # Create your views here.
 table_data = []
@@ -81,6 +83,7 @@ def tables(request):
                 data = pd.DataFrame(raw)
 
             table_data.append(data)
+            # time.sleep(2)
             return HttpResponseRedirect(reverse_lazy('home:table_results'))
     else:
         data = None
@@ -91,6 +94,7 @@ def tables(request):
 
 def table_result(request):
     try:
+        messages.success(request, 'Your Data Has Been Successfully Analyzed By Mentis Oculi')
         context = {'data': table_data[-1]}
     except Exception:
         context = {'data': []}
