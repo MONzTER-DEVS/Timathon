@@ -170,6 +170,20 @@
             </div>
         </div>
     {% endif %}
+    {% if login %}
+
+        <script>
+            show_login_form()
+            location.href='#loginFormDiv'
+        </script>
+
+    {% elif signup %}
+        <script>
+            show_register_form()
+            location.href='#registerFormDiv'
+        </script>
+
+    {% endif %}
 
     <h2 class="footer-heading-two">Start The Awesome Journey With <span>Mentis Oculi</span>!</h2>
 </div>

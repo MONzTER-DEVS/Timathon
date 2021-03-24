@@ -19,11 +19,11 @@ def register(request):
 
         if password != password2:
             messages.error(request, "Passwords do not match")
-            return render(request, "users/signup.html")
+            return render(request, "home/index.html", {"signup": True})
 
         if len(User.objects.filter(username=username)) > 0:
             messages.error(request, "username is taken")
-            return render(request, "users/signup.html")
+            return render(request, "home/index.html", {"signup": True})
 
         user = User.objects.create_user(username=username, password=password, first_name=name)
         user.save()
@@ -31,18 +31,20 @@ def register(request):
         if user is not None:
             auth.login(request, user)
 
-        return redirect("/")
+        return redirect("/components")
 
 
 def sign_in(request):
+
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
+            return redirect("/components")
 
-        return redirect("/#end")
+        return render(request, "home/index.html", {"login": True})
 
 
 @login_required
