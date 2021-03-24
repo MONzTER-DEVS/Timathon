@@ -269,6 +269,7 @@ span {
 
 /*Forms*/
 
+
 .form-div form input::placeholder{
     color: #bdb5b5;
     font-size: 20px;
@@ -293,40 +294,132 @@ span {
 
 }
 
+#registerForm {
+    display: grid;
+}
+
+
+#label-name {
+    /* position: relative; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#name {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
 #label-username{
-    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /* position: absolute;
     right: 345px;
-    top: 85px;
+    top: 85px; */
+    /* background-color: wheat; */
+    /* position: absolute; */
+    /* left: 25vw; */
 }
 
 #username{
-    position: absolute;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /* position: absolute;
     top: 70px;
-    right: 21px;
+    right: 21px; */
 }
 
 #label-password1{
-    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    /* position: absolute;
     right: 345px;
-    top: 135px;
+    top: 135px; */
 }
 
 #password1{
-    position: absolute;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    /* position: absolute;
     top: 120px;
-    right: 21px;
+    right: 21px; */
 }
 
 #label-password2{
-    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    max-width: 1em;
+    /* position: absolute;
     right: 345px;
-    top: 185px;
+    top: 185px; */
 }
 
 #password2 {
-    position: absolute;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    /* position: absolute;
     top: 170px;
-    right: 21px;
+    right: 21px; */
+}
+
+.form-alternate-sign-in-out {
+    text-decoration: none; 
+    /* position: absolute; 
+    top: 35vh; 
+    right: 28vh;  */
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    color: black; 
+    font-family: 'Recursive', cursive;
+}
+
+#loginForm {
+    display: grid;
+}
+
+#label-username-login {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#username-login {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#label-password1-login {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#password1-login {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 /*Tables*/
