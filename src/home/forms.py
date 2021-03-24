@@ -11,5 +11,5 @@ class TableDataForm(forms.ModelForm):
         super(TableDataForm, self).__init__(*args, **kwargs)
         self.fields['file'].widget.attrs = {
             'class': 'file-upload-btn',
-            'id': 'file-upload'
+            'id': 'file-upload-id'
         }

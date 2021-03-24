@@ -85,6 +85,8 @@ def tables(request):
             table_data.append(data)
             # time.sleep(2)
             return HttpResponseRedirect(reverse_lazy('home:table_results'))
+        else:
+            print('OOF')
     else:
         data = None
         form = TableDataForm()
