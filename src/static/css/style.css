@@ -440,13 +440,18 @@ span {
     margin-top: 15px;
 }
 
-.registerFormDiv.label{
+.registerFormDiv.label {
     text-align: center;
     margin-top: 15px;
 }
 
 
-
-.table-add-record{
+.table-add-record {
     cursor: pointer;
+}
+
+.sample-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

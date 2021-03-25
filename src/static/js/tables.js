@@ -1,11 +1,12 @@
 let table = document.getElementById('table-id');
 
-
+// Delete Row
 function deleteRowOfTable(row){
       let rowIndex = row.parentNode.parentNode.rowIndex;
       table.deleteRow(rowIndex);
 }
 
+// Add Row
 let btnAddRecord = document.getElementById('btn-add-id');
 let popupBg = document.querySelector('.popup-bg');
 let popupClose = document.querySelector('.popup-close');
@@ -41,4 +42,54 @@ popupSubmit.addEventListener('click', function () {
     inputArray = [];
 })
 
+// Filter Row
 
+
+// Export The Model
+
+function exportTableToExcel(tableID, filename = '') {
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+    // Specify file name
+    filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+    // Create download link element
+    downloadLink = document.createElement("a");
+
+    document.body.appendChild(downloadLink);
+
+    if (navigator.msSaveOrOpenBlob) {
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob(blob, filename);
+    } else {
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+        // Setting the file name
+        downloadLink.download = filename;
+
+        //triggering the function
+        downloadLink.click();
+    }
+}
+
+function exportTableToPDF() {
+    html2canvas($('#table-id')[0], {
+        onrendered: function (canvas) {
+            var data = canvas.toDataURL();
+            var docDefinition = {
+                content: [{
+                    image: data,
+                    width: 500
+                }]
+            };
+            console.log('OOF');
+            pdfMake.createPdf(docDefinition).download("table.pdf");
+        }
+    });
+}

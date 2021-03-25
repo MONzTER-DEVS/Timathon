@@ -48,7 +48,17 @@
       <strong>Hurrah:</strong> {{message}}
     </div>
 {% endfor %}
-<a class="btn btn-primary" href="{% url 'home:tables' %}"><span class="fa fa-arrow-left"></span>Back To The Form</a>
+<div class="sample-buttons">
+    <div class="sample-button-one">
+        <a class="btn btn-primary" href="{% url 'home:tables' %}"><span class="fa fa-arrow-left"></span>Back To The Form</a>
+        <button id="btn-add-id" class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record
+        </button>
+    </div>
+    <div class="sample-button-two">
+        <button class="btn btn-success" onclick="exportTableToExcel('table-id', 'table')">Export EXCEL</button>
+        <button class="btn btn-danger" onclick="exportTableToPDF();">Export PDF</button>
+    </div>
+</div>
 <br><br><br>
 <table align="center" id="table-id" align="center" class="table table-style table-bordered table-dark table-hover table-responsive"
 
@@ -76,10 +86,9 @@
     {% endfor %}
     </tbody>
 </table>
-<button id="btn-add-id" class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record
-</button>
-{% endblock %}
 
+
+{% endblock %}
 {% block PopUp %}
     <div class="popup-bg">
         <div class="popup">
