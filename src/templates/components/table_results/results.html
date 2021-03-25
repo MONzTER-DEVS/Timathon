@@ -1,4 +1,4 @@
-{% extends 'components/table_results/base.html' %}
+<script src="../../../static/js/popup.js"></script>{% extends 'components/table_results/base.html' %}
 {% load static %}
 {% block header %}
 <nav class="navbar-header flex">
@@ -76,6 +76,19 @@
     {% endfor %}
     </tbody>
 </table>
-<button data-model-target="#popup" class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record
+<button id="btn-add-id" onclick="test();" class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record
 </button>
+{% endblock %}
+
+{% block PopUp %}
+    <div class="popup-bg">
+        <div class="popup">
+            <h2 class="popup-heading">Add A Record!</h2>
+            {% for header in headers %}
+            <span class="popup-label">{{header}}: </span> <input class="popup-input" type="text">
+            {% endfor %}
+            <button class="popup-submit">Submit</button>
+            <span class="fa fa-times popup-close"></span>
+        </div>
+    </div>
 {% endblock %}

@@ -25,7 +25,8 @@
     text-align: center;
     font-family: 'Baloo Bhai 2', cursive;
     font-size: 50px;
-    color: #EE964B;
+    text-shadow: 4px 2px 0 black;
+    color: #eadad4;
 }
 
 .heading-brand {
@@ -442,4 +443,10 @@ span {
 .registerFormDiv.label{
     text-align: center;
     margin-top: 15px;
+}
+
+
+
+.table-add-record{
+    cursor: pointer;
 }

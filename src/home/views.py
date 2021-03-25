@@ -21,7 +21,7 @@ def index(request):
     return render(request, 'home/index.html')
 
 
-@login_required
+# @login_required
 def components(request):
     return render(request, 'components/components.html')
 
@@ -83,7 +83,10 @@ def tables(request):
 def table_result(request):
     try:
         messages.success(request, 'Your Data Has Been Successfully Analyzed By Mentis Oculi')
-        context = {'data': table_data[-1]}
+        headers = []
+        for header in table_data[-1]:
+            headers.append(header)
+        context = {'data': table_data[-1], 'headers': headers}
     except Exception:
         context = {'data': []}
     return render(request, 'components/table_results/results.html', context)
