@@ -83,6 +83,9 @@ function exportTableToExcel(tableID, filename = '') {
         downloadLink.click();
     }
 }
+function test(){
+        console.log('HELLO!');
+    }
 
 function exportTableToPDF() {
     var rows = table.rows;
@@ -90,7 +93,6 @@ function exportTableToPDF() {
     for (let j = 0; j < rows.length; j++) {
         rows[j].deleteCell(i);
     }
-    document.getElementsByClassName('back-to-form')[0].click();
     html2canvas($('#table-id')[0], {
         onrendered: function (canvas) {
             var data = canvas.toDataURL();
@@ -102,6 +104,11 @@ function exportTableToPDF() {
             };
             console.log('OOF');
             pdfMake.createPdf(docDefinition).download("table.pdf");
+
         }
     });
+    // setTimeout(function () {
+    //     console.log('Hello!')
+    // }, 2000)
+    // document.getElementsByClassName('back-to-form')[0].click();
 }
