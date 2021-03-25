@@ -1,34 +1,13 @@
-// const openPopupButtons = document.querySelectorAll('[data-model-target]');
-// const closePopupButtons = document.querySelectorAll('[data-close-button]');
-const overlay = document.getElementById('overlay');
-const addRecordButton = document.getElementsByClassName('table-add-record')[0];
-addRecordButton.addEventListener('click', function (){
-    overlay.style.backgroundColor = 'yellow';
-})
-
-
-// openPopupButtons.forEach(button => {
-//     button.addEventListener('click', ()=>{
-//         const popup = document.querySelector(button.dataset.modelTarget);
-//         openPopup(popup);
-//     })
+// let btnAddRecord = document.getElementById('btn-add-id');
+// let popupBg = document.querySelector('.popup-bg');
+// let popupClose = document.querySelector('.popup-close');
+//
+//
+// btnAddRecord.addEventListener('click', function () {
+//     popupBg.classList.add('popup-active');
 // })
 //
-// closePopupButtons.forEach(button => {
-//     button.addEventListener('click', ()=>{
-//         const popup = buttonc.closest('.popup-inner-div')
-//         closePopup(popup);
-//     })
+// popupClose.addEventListener('click', function () {
+//     popupBg.classList.remove('popup-active');
 // })
 //
-// function openPopup(popup){
-//     if(popup == null) return
-//     popup.classList.add('active')
-//     overlay.classList.add('active')
-// }
-//
-// function closePopup(popup){
-//     if(popup == null) return
-//     popup.classList.remove('active')
-//     overlay.classList.remove('active')
-// }
