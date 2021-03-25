@@ -61,11 +61,14 @@
 }
 
 .footer-heading {
+    margin-bottom: 50px;
     font-family: 'Baloo Bhai 2', cursive;
     text-shadow: 0 0 10px black;
+    text-align: center;
 }
 
 .footer-heading-two {
+    margin-top: 50px;
     font-family: 'Baloo Bhai 2', cursive;
     color: #EE964B;
     text-shadow: 0 0 10px black;
@@ -389,7 +392,8 @@ span {
     text-align: center;
     grid-column-start: 1;
     grid-column-end: 3;
-    color: black; 
+    color: black;
+    display: block;
     font-family: 'Recursive', cursive;
 }
 
@@ -428,4 +432,14 @@ span {
 /*Tables*/
 .show-popup{
     visibility: visible;
+}
+
+.loginFormDiv.label{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.registerFormDiv.label{
+    text-align: center;
+    margin-top: 15px;
 }

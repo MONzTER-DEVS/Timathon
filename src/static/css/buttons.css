@@ -127,10 +127,10 @@
     font-family: 'Recursive', cursive;
     /* color: #32d2b5; */
     color: #EE964B;
-    position: absolute;
-    right: -15vw;
+    /*position: absolute;*/
+    /*right: -15vw;*/
     font-size: 20px;
-    top: 270px;
+    /*top: 270px;*/
 }
 .form-submit-continue:hover{
     color: white;
