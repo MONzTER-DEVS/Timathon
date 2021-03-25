@@ -1,16 +1,22 @@
+from io import StringIO
+
 import pandas as pd
 import os
 import openpyxl
 import time
-import pprint
-from django.shortcuts import render
-from .forms import TableDataForm
+import matplotlib.pyplot as plt
+import numpy as np
+
+from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseRedirect
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from timathon.settings import MEDIA_ROOT
 from django.contrib import messages
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+
+from timathon.settings import MEDIA_ROOT
+from .forms import TableDataForm
 
 # Create your views here.
 table_data = []
@@ -34,20 +40,20 @@ def charts(request):
     return render(request, 'components/charts/charts.html')
 
 
-def read_excel(fp):
-    wb = openpyxl.load_workbook(fp)
-    sheet = wb.active
-    num_of_columns = sheet.max_column
-    num_of_rows = sheet.max_row
+def extract_data(fp):
+    """
 
-    all_rows = []
-    for row in range(1, num_of_rows + 1):
-        this_row = []
-        for col in range(1, num_of_columns + 1):
-            this_row.append(sheet.cell(row=row, column=col).value)
+    :param fp: file name
+    :return: data in that file
+    """
 
-        all_rows.append(this_row)
-    return all_rows
+    if fp.endswith('csv'):
+        data = pd.read_csv(fp)
+
+    elif fp.endswith('xls') or fp.endswith('xlsx'):
+        data = pd.read_excel(fp)
+
+    return data
 
 
 def tables(request):
@@ -60,14 +66,8 @@ def tables(request):
             fs.save(uploaded_file.name, uploaded_file)
             form.save()
             fn = os.path.join(MEDIA_ROOT, uploaded_file.name)
-            if fn.endswith('csv'):
-                data = pd.read_csv(os.path.join(MEDIA_ROOT, uploaded_file.name))
 
-            elif fn.endswith('xls') or fn.endswith('xlsx'):
-                # raw = read_excel(fn)
-                # data = pd.DataFrame(raw)
-                data = pd.read_excel(os.path.join(MEDIA_ROOT, uploaded_file.name))
-
+            data = extract_data(fn)
             table_data.append(data)
             # time.sleep(2)
             return HttpResponseRedirect(reverse_lazy('home:table_results'))
@@ -89,4 +89,37 @@ def table_result(request):
         context = {'data': table_data[-1], 'headers': headers}
     except Exception:
         context = {'data': []}
-    return render(request, 'components/table_results/results.html', context)
+    return render(request, 'components/charts/select.html', context)
+
+
+def charts_select(request):
+    if request.method == 'GET':
+        return render(request, "components/charts/select.html")
+    elif request.method == 'POST':
+        # file extraction not working
+
+
+        # print(request.FILES)
+        # file = request.FILES['file']
+        #
+        # type_of_chart = request.POST['type']
+        # fn = os.path.join(MEDIA_ROOT, file.name)
+        # data = extract_data(fn)
+
+        # making the plot
+        x = np.arange(0, np.pi * 3, .1)
+        y = np.sin(x)
+        fig = plt.figure()
+        plt.plot(x, y)
+
+        # converting
+        imgdata = StringIO()
+        fig.savefig(imgdata, format='svg')
+        imgdata.seek(0)
+        to_return_plot = imgdata.getvalue()
+
+        context = {
+            'graph': to_return_plot
+        }
+
+        return render(request, "components/charts/chart_rendered.html", context)

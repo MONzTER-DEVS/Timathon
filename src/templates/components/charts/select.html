@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <form action="{% url 'home:charts' %}" method="post">
+        {% csrf_token %}
+        <label> <span>File</span>
+            <input type="file" id="file" name="file" required>
+        </label>
+
+        <input type="radio" name="type" value="pie chart">
+        <input type="radio" name="type" value="bar graphs">
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>
