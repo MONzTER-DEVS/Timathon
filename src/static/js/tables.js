@@ -1,4 +1,4 @@
-let table = document.getElementById('table-id');
+var table = document.getElementById('table-id');
 
 // Delete Row
 function deleteRowOfTable(row){
@@ -48,6 +48,12 @@ popupSubmit.addEventListener('click', function () {
 // Export The Model
 
 function exportTableToExcel(tableID, filename = '') {
+    var rows = table.rows;
+    var i = -1;
+    for (let j = 0; j < rows.length; j++) {
+        rows[j].deleteCell(i);
+    }
+    document.getElementsByClassName('back-to-form')[0].click();
     var downloadLink;
     var dataType = 'application/vnd.ms-excel';
     var tableSelect = document.getElementById(tableID);
@@ -79,6 +85,12 @@ function exportTableToExcel(tableID, filename = '') {
 }
 
 function exportTableToPDF() {
+    var rows = table.rows;
+    var i = -1;
+    for (let j = 0; j < rows.length; j++) {
+        rows[j].deleteCell(i);
+    }
+    document.getElementsByClassName('back-to-form')[0].click();
     html2canvas($('#table-id')[0], {
         onrendered: function (canvas) {
             var data = canvas.toDataURL();
