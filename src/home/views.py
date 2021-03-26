@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import openpyxl
 import time
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
 
 from django.shortcuts import render, HttpResponse
@@ -93,33 +93,33 @@ def table_result(request):
 
 
 def charts_select(request):
-    if request.method == 'GET':
-        return render(request, "components/charts/select.html")
-    elif request.method == 'POST':
-        # file extraction not working
+    # if request.method == 'GET':
+    #     return render(request, "components/charts/select.html")
+    # elif request.method == 'POST':
+    #     # file extraction not working
 
 
-        # print(request.FILES)
-        # file = request.FILES['file']
-        #
-        # type_of_chart = request.POST['type']
-        # fn = os.path.join(MEDIA_ROOT, file.name)
-        # data = extract_data(fn)
+    #     # print(request.FILES)
+    #     # file = request.FILES['file']
+    #     #
+    #     # type_of_chart = request.POST['type']
+    #     # fn = os.path.join(MEDIA_ROOT, file.name)
+    #     # data = extract_data(fn)
 
-        # making the plot
-        x = np.arange(0, np.pi * 3, .1)
-        y = np.sin(x)
-        fig = plt.figure()
-        plt.plot(x, y)
+    #     # making the plot
+    #     x = np.arange(0, np.pi * 3, .1)
+    #     y = np.sin(x)
+    #     fig = plt.figure()
+    #     plt.plot(x, y)
 
-        # converting
-        imgdata = StringIO()
-        fig.savefig(imgdata, format='svg')
-        imgdata.seek(0)
-        to_return_plot = imgdata.getvalue()
+    #     # converting
+    #     imgdata = StringIO()
+    #     fig.savefig(imgdata, format='svg')
+    #     imgdata.seek(0)
+    #     to_return_plot = imgdata.getvalue()
 
-        context = {
-            'graph': to_return_plot
-        }
+    #     context = {
+    #         'graph': to_return_plot
+    #     }
 
         return render(request, "components/charts/chart_rendered.html", context)

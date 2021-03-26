@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'css/animation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
     <link rel="stylesheet" href="{% static 'css/popup.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Google Fonts -->
@@ -42,6 +43,10 @@
 <div class="popup-div">
     {% block PopUp %}{% endblock %}
 </div>
+
+<div class="popup-div-edit">
+    {% block PopUpEdit %}{% endblock %}
+</div>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -56,7 +61,7 @@
 <script src="{% static 'js/navbar.js' %}"></script>
 <script src="{% static 'js/features.js' %}"></script>
 <script src="{% static 'js/tables.js' %}"></script>
-<script src="{% static 'js/popup.js' %}"></script>
+<script src="{% static 'js/edit.js' %}"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
