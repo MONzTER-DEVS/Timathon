@@ -48,12 +48,17 @@ popupSubmit.addEventListener('click', function () {
 // Export The Model
 
 function exportTableToExcel(tableID, filename = '') {
-    var rows = table.rows;
-    var i = -1;
-    for (let j = 0; j < rows.length; j++) {
-        rows[j].deleteCell(i);
+    document.getElementById('btn-add-id').style.visibility = 'hidden';
+    let tableHeaders = table.getElementsByTagName('th');
+    let lastIndex = tableHeaders.length - 1;
+    if (tableHeaders[lastIndex].innerHTML === 'Manipulations') {
+        var rows = table.rows;
+        var i = -1;
+        for (let j = 0; j < rows.length; j++) {
+            rows[j].deleteCell(i);
+        }
     }
-    document.getElementsByClassName('back-to-form')[0].click();
+
     var downloadLink;
     var dataType = 'application/vnd.ms-excel';
     var tableSelect = document.getElementById(tableID);
@@ -88,10 +93,16 @@ function test(){
     }
 
 function exportTableToPDF() {
-    var rows = table.rows;
-    var i = -1;
-    for (let j = 0; j < rows.length; j++) {
-        rows[j].deleteCell(i);
+    document.getElementById('btn-add-id').style.visibility = 'hidden';
+
+    let tableHeaders = table.getElementsByTagName('th');
+    let lastIndex = tableHeaders.length - 1;
+    if (tableHeaders[lastIndex].innerHTML === 'Manipulations') {
+        var rows = table.rows;
+        var i = -1;
+        for (let j = 0; j < rows.length; j++) {
+            rows[j].deleteCell(i);
+        }
     }
     html2canvas($('#table-id')[0], {
         onrendered: function (canvas) {
@@ -114,12 +125,11 @@ function exportTableToPDF() {
 }
 
 
-
 // Edit Button
-let editBtn = document.getElementsByClassName('btn-edit-class');
-for (let i = 0; i < editBtn.length; i++) {
-    editBtn[i].addEventListener('click', function () {
-        console.log(i);
-    })
-}
+// let editBtn = document.getElementsByClassName('btn-edit-class');
+// for (let i = 0; i < editBtn.length; i++) {
+//     editBtn[i].addEventListener('click', function () {
+//         console.log(i);
+//     })
+// }
 
