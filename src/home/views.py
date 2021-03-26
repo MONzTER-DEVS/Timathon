@@ -4,7 +4,6 @@ import pandas as pd
 import os
 import openpyxl
 import time
-# import matplotlib.pyplot as plt
 import numpy as np
 
 from django.shortcuts import render, HttpResponse
@@ -13,7 +12,6 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
-from matplotlib.backends.backend_agg import FigureCanvasAgg
 
 from timathon.settings import MEDIA_ROOT
 from .forms import TableDataForm
