@@ -61,7 +61,31 @@
         <button class="btn btn-danger" onclick="exportTableToPDF();">Export PDF</button>
     </div>
 </div>
-<br><br><br>
+<div class="search-div">
+    <div class="select-box">
+
+        <div class="options-container">
+            {% for header in headers %}
+            <div class="option">
+                <input type="radio" class="radio" id="{{header}}" name="category">
+                <label for="{{header}}">{{header}}</label>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="selected">
+            Select Search Category
+<!--            <span class="fa fa-arrow-down arrow-css"></span>-->
+        </div>
+    </div>
+    <!--    <select name="" id="headings">-->
+    <!--        {% for header in headers %}-->
+    <!--        <option value="{{header}}">{{header}}</option>-->
+    <!--        {% endfor %}-->
+    <!--    </select>-->
+
+    <input type="text" onkeyup="search();" class="input-search" id="search-input" placeholder="Search">
+</div>
+<br><br>
 <table align="center" id="table-id" align="center"
     class="table table-style table-bordered table-dark table-hover table-responsive" border="2px" bgcolor="">
     <thead align="center">
@@ -96,7 +120,7 @@
     <div class="popup">
         <h2 class="popup-heading">Add A Record!</h2>
         {% for header in headers %}
-        <span class="popup-label">{{header}}: </span> <input class="popup-input" type="text">
+        <span class="popup-label">{{header}}: </span><input class="popup-input" type="text">
         {% endfor %}
         <button class="popup-submit">Submit</button>
         <span class="fa fa-times popup-close"></span>

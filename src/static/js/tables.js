@@ -25,9 +25,11 @@ let tableBody = document.getElementsByClassName('table-body')[0];
 let popupSubmit = document.getElementsByClassName('popup-submit')[0];
 let popupInputs = document.getElementsByClassName('popup-input');
 popupSubmit.addEventListener('click', function () {
+    console.log('OOF');
     for (let i = 0; i < popupInputs.length; i++) {
         inputArray.push(popupInputs[i].value);
     }
+    console.log(inputArray);
     const row = tableBody.insertRow(table.rows.length - 1);
     for (let i = 0; i < inputArray.length; i++) {
         row.insertCell(i).innerHTML = inputArray[i];

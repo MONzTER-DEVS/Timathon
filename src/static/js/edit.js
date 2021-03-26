@@ -31,13 +31,13 @@ popupCloseEdit.addEventListener('click', function () {
  popupBgEdit.classList.remove('popup-bg-active-edit');
 })
 
-popupInputs = document.getElementsByClassName('popup-input-edit');
+popupInputsEdit = document.getElementsByClassName('popup-input-edit');
 
 // save button - click event
 saveBtn.addEventListener('click', function () {
  // getting the values in the input cells
- for (let i = 0; i < popupInputs.length; i++) {
-  input_array.push(popupInputs[i].value);
+ for (let i = 0; i < popupInputsEdit.length; i++) {
+  input_array.push(popupInputsEdit[i].value);
  }
  // making the change in the actual table
  for (let j = 0; j < Rows.cells.length; j++) {
@@ -63,3 +63,7 @@ cancelBtn.addEventListener('click', function () {
  editBtnsLoop();
 })
 
+// Search
+tableHead = document.getElementsByTagName('thead');
+headers = tableHead[0].getElementsByTagName('th');
+//

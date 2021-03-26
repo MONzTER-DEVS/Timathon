@@ -455,3 +455,10 @@ span {
     align-items: center;
     justify-content: space-between;
 }
+
+
+.search-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
