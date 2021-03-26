@@ -103,3 +103,20 @@
     </div>
 </div>
 {% endblock %}
+
+{% block PopUpEdit %}
+<div class="popup-bg-edit">
+    <div class="popup-edit">
+        <h2 class="popup-heading">Edit Record!</h2>
+        {% for header in headers %}
+        <span class="popup-label">{{header}}: </span> <input type="text" class="popup-input-edit">
+        {% endfor %}
+        <div class="button-popup-edit-div">
+            <button class="btn btn-sm btn-sm-first-btn btn-success">Save</button>
+            <button class="btn btn-sm btn-danger">Cancel</button>
+        </div>
+
+        <span class="fa fa-times" id="popup-close-edit"></span>
+    </div>
+</div>
+{% endblock %}

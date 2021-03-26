@@ -1,24 +1,21 @@
+let table_body = document.getElementsByClassName('table-body')[0];
 let editBtn = document.getElementsByClassName('btn-edit-class');
-let tableBody = document.getElementsByClassName('table-body')[0];
+let popupBgEdit = document.querySelector('.popup-bg-edit');
+let popupCloseEdit = document.querySelector('#popup-close-edit');
+
 for (let i = 0; i < editBtn.length; i++) {
  editBtn[i].addEventListener('click', function () {
-  rows = tableBody.rows[i];
+ let popupInputEdit = document.getElementsByClassName('popup-input-edit');
+  popupBgEdit.classList.add('popup-bg-active-edit');
+  let rows = table_body.rows[i];
+  for (let j = 0; j < popupInputEdit.length; j++) {
+   popupInputEdit[j].value = rows.cells[j].innerHTML;
+  }
+ console.log(rows);
  })
 }
 
-// let btnAddRecord = document.getElementById('btn-add-id');
-// let popupBg = document.querySelector('.popup-bg');
-// let popupClose = document.querySelector('.popup-close');
-//
-//
-// btnAddRecord.addEventListener('click', function () {
-//     popupBg.classList.add('popup-active');
-// })
-//
-// popupClose.addEventListener('click', function () {
-//     popupBg.classList.remove('popup-active');
-// })
-//
-
-
+popupCloseEdit.addEventListener('click', function () {
+ popupBgEdit.classList.remove('popup-bg-active-edit');
+})
 

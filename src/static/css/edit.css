@@ -1,66 +1,58 @@
-/*.popup-bg-edit{*/
-/* position: fixed;*/
-/* top: 0;*/
-/* left: 0;*/
-/* width: 100%;*/
-/* height: 100vh;*/
-/* background-color: rgba(0, 0, 0, 0.5);*/
-/* display: flex;*/
-/* justify-content: center;*/
-/* align-items: center;*/
-/* visibility: hidden;*/
-/* opacity: 0;*/
-/* transition: visibility 0s, opacity 0.5s;*/
-/*}*/
+.popup-bg-edit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+}
 
-/*.popup-active-edit{*/
-/* visibility: visible;*/
-/* opacity: 1;*/
-/*}*/
+.popup-bg-active-edit {
+    visibility: visible;
+    opacity: 1;
+}
 
-/*.popup-edit{*/
-/* position: relative;*/
-/* background-color: white;*/
-/* display: flex;*/
-/* justify-content: center;*/
-/* align-items: center;*/
-/* flex-direction: column;*/
-/* padding: 23px 124px;*/
-/* margin: 50px 20px;*/
-/* border-radius: 20px;*/
-/*}*/
+.popup-edit {
+    position: relative;
+    background-color: white;
+    /*width: 30%;*/
+    /*height: 30%;*/
+    padding: 23px 124px;
+    margin: 50px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
 
-/*.popup-close-edit{*/
-/* position: absolute;*/
-/* top: 10px;*/
-/* right: 10px;*/
-/* border: 0;*/
-/* outline: 0;*/
-/* font-weight: bold;*/
-/* cursor : pointer;*/
-/*}*/
 
-/*.popup-submit-edit{*/
-/* margin: 10px 10px;*/
-/* padding: 4px 14px;*/
-/* border: 3px solid #EE964B;*/
-/* border-radius: 10px;*/
-/* background-color: transparent;*/
-/* text-transform: uppercase;*/
-/* font-weight: bold;*/
-/* color: #EE964B;*/
-/* font-family: 'Baloo Bhai 2', cursive;*/
-/* font-size: 16px;*/
-/* transition: all 0.2s ease-in-out;*/
-/* cursor: pointer;*/
-/*}*/
+}
 
-/*.popup-submit-edit:hover{*/
-/* background-color: #EE964B;*/
-/* color: white;*/
-/*}*/
+#popup-close-edit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0;
+    outline: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-/*.popup-heading-edit{*/
-/* font-family: 'Baloo Bhai', cursive;*/
-/*}*/
+.button-popup-edit-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.btn-sm-first-btn{
+    margin-right: 10px;
+}
 
