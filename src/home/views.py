@@ -6,12 +6,13 @@ import openpyxl
 import time
 import numpy as np
 
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.http import HttpResponseRedirect
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
+from .models import *
 
 from timathon.settings import MEDIA_ROOT
 from .forms import TableDataForm
@@ -56,6 +57,9 @@ def extract_data(fp):
 
 def tables(request):
     data = None
+    if request.COOKIES.get('file'):
+        return redirect('home:table_results')
+
     if request.method == 'POST':
         form = TableDataForm(request.FILES)
         if form.is_valid():
@@ -64,6 +68,8 @@ def tables(request):
             fs.save(uploaded_file.name, uploaded_file)
             form.save()
             fn = os.path.join(MEDIA_ROOT, uploaded_file.name)
+
+            UserFile(user_name=request.user.username, file_name=fn).save()
 
             data = extract_data(fn)
             table_data.append(data)
@@ -96,7 +102,6 @@ def charts_select(request):
     # elif request.method == 'POST':
     #     # file extraction not working
 
-
     #     # print(request.FILES)
     #     # file = request.FILES['file']
     #     #
@@ -120,4 +125,16 @@ def charts_select(request):
     #         'graph': to_return_plot
     #     }
 
-        return render(request, "components/charts/chart_rendered.html", context)
+    context = {}
+    response = render(request, "components/charts/chart_rendered.html", context)
+    return response
+
+
+def my_files(request):
+    if request.method == 'GET':
+        return render(request, 'components/my_files.html')
+
+    else:
+        response = render(request, 'components/components.html')
+        response.set_cookie("file", request.POST['fn'])
+        return response

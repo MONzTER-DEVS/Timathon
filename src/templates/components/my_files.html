@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Title</title>
+</head>
+
+<body>
+    {% for file in files %}
+        {% csrf_token %}
+
+        <form>
+            <label>
+                <input type="radio" name="fn" value="{{ file.original_name }}">
+            </label>{{ file.original_name }}
+        </form>
+
+    {% endfor %}
+</body>
+
+</html>
