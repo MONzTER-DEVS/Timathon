@@ -112,3 +112,14 @@ function exportTableToPDF() {
     // }, 2000)
     // document.getElementsByClassName('back-to-form')[0].click();
 }
+
+
+
+// Edit Button
+let editBtn = document.getElementsByClassName('btn-edit-class');
+for (let i = 0; i < editBtn.length; i++) {
+    editBtn[i].addEventListener('click', function () {
+        console.log(i);
+    })
+}
+

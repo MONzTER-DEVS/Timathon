@@ -1,4 +1,4 @@
-<script src="../../../static/js/popup.js"></script>{% extends 'components/table_results/base.html' %}
+{% extends 'components/table_results/base.html' %}
 {% load static %}
 {% block header %}
 <nav class="navbar-header flex">
@@ -9,11 +9,11 @@
             </div>
             <!--            <li class="navbar-brand flex underline-brand"><a class="navbar-brand-link bold" href="#">MENTIS OCULI</a></li>-->
             <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link"
-                                            href="{% url 'home:index' %}">Home</a></li>
+                    href="{% url 'home:index' %}">Home</a></li>
             <li class="navbar-list-item"><a class="navbar-list-link flex"
-                                            href="{% url 'home:components' %}">Components</a></li>
-            <li class="navbar-list-item"><a class="navbar-list-link flex"
-                                            href="{% url 'home:favourites' %}">Favourites</a></li>
+                    href="{% url 'home:components' %}">Components</a></li>
+            <!-- <li class="navbar-list-item"><a class="navbar-list-link flex"
+                    href="{% url 'home:favourites' %}">Favourites</a></li> -->
 
             {% if user.is_authenticated %}
             <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
@@ -26,7 +26,8 @@
 
             {% else %}
             <li class="navbar-list-item">
-                <button class="flex navbar-button" id="navbar-signin" href="#"><span class="fa fa-sign-in"> </span>Signin
+                <button class="flex navbar-button" id="navbar-signin" href="#"><span class="fa fa-sign-in">
+                    </span>Signin
                 </button>
             </li>
 
@@ -44,13 +45,14 @@
 {% endblock %}
 {% block Result %}
 {% for message in messages %}
-    <div class="alert alert-{{message.tags}}" role="alert">
-      <strong>Hurrah:</strong> {{message}}
-    </div>
+<div class="alert alert-{{message.tags}}" role="alert">
+    <strong>Hurrah:</strong> {{message}}
+</div>
 {% endfor %}
 <div class="sample-buttons">
     <div class="sample-button-one">
-        <a class="btn btn-primary back-to-form" href="{% url 'home:tables' %}"><span class="fa fa-arrow-left"></span>Back To The Form</a>
+        <a class="btn btn-primary back-to-form" href="{% url 'home:tables' %}"><span
+                class="fa fa-arrow-left"></span>Back To The Form</a>
         <button id="btn-add-id" class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record
         </button>
     </div>
@@ -60,44 +62,44 @@
     </div>
 </div>
 <br><br><br>
-<table align="center" id="table-id" align="center" class="table table-style table-bordered table-dark table-hover table-responsive"
-
-       border="2px"
-       bgcolor="">
+<table align="center" id="table-id" align="center"
+    class="table table-style table-bordered table-dark table-hover table-responsive" border="2px" bgcolor="">
     <thead align="center">
-    <tr class="">
-        {% for item in data %}
-        <th>{{ item }}</th>
-        {% endfor %}
-        <th class="table-manipulate">Manipulations</th>
-    </tr>
+        <tr class="">
+            {% for item in data %}
+            <th>{{ item }}</th>
+            {% endfor %}
+            <th class="table-manipulate">Manipulations</th>
+        </tr>
     </thead>
     <tbody align="center" class="table-body">
-    {% for _, record in data.iterrows %}
-    <tr>
-        {% for value in record %}
-        <td class="table-elements">{{ value }}</td>
+        {% for _, record in data.iterrows %}
+        <tr>
+            {% for value in record %}
+            <td class="table-elements">{{ value }}</td>
+            {% endfor %}
+            <td align="center" class="">
+                <button class="btn btn-primary btn-edit-class" id="btn-edit"><span
+                        class="fa fa-pencil-square-o"></span>Edit</button>
+                <button class="btn btn-danger btn-delete" id="btn-delete" onclick="deleteRowOfTable(this)"><span
+                        class="fa fa-remove"></span>Delete</button>
+            </td>
+        </tr>
         {% endfor %}
-        <td align="center" class="">
-            <button class="btn btn-primary" id="btn-edit"><span class="fa fa-pencil-square-o"></span>Edit</button>
-            <button class="btn btn-danger btn-delete" id="btn-delete" onclick="deleteRowOfTable(this)"><span class="fa fa-remove"></span>Delete</button>
-        </td>
-    </tr>
-    {% endfor %}
     </tbody>
 </table>
 
 
 {% endblock %}
 {% block PopUp %}
-    <div class="popup-bg">
-        <div class="popup">
-            <h2 class="popup-heading">Add A Record!</h2>
-            {% for header in headers %}
-            <span class="popup-label">{{header}}: </span> <input class="popup-input" type="text">
-            {% endfor %}
-            <button class="popup-submit">Submit</button>
-            <span class="fa fa-times popup-close"></span>
-        </div>
+<div class="popup-bg">
+    <div class="popup">
+        <h2 class="popup-heading">Add A Record!</h2>
+        {% for header in headers %}
+        <span class="popup-label">{{header}}: </span> <input class="popup-input" type="text">
+        {% endfor %}
+        <button class="popup-submit">Submit</button>
+        <span class="fa fa-times popup-close"></span>
     </div>
+</div>
 {% endblock %}

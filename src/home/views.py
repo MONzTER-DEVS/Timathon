@@ -89,7 +89,7 @@ def table_result(request):
         context = {'data': table_data[-1], 'headers': headers}
     except Exception:
         context = {'data': []}
-    return render(request, 'components/charts/select.html', context)
+    return render(request, 'components/table_results/results.html', context)
 
 
 def charts_select(request):

@@ -14,9 +14,9 @@
                 <embed src="{% static 'images\logo.svg' %}" alt="LOGO-IMAGE" id="navbar-logo">
             </div>
 <!--            <li class="navbar-brand flex underline-brand"><a class="navbar-brand-link bold" href="#">MENTIS OCULI</a></li>-->
-            <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:index' %}">Home</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link" href="{% url 'home:index' %}">Home</a></li>
             <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:components' %}">Components</a></li>
-            <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:favourites' %}">Favourites</a></li>
+            <!-- <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:favourites' %}">Favourites</a></li> -->
 
             {% if user.is_authenticated %}
                 <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
@@ -52,7 +52,7 @@
     <p class="features-text flex">Visualize Data, View Charts, Make Tables, Export Your Model And Much More...</p>
     <div class="buttons-div">
         <!-- <button class="btn-arrow-left"><span class="fa fa-chevron-left"></span></button> -->
-        <button class="btn-get-started"><span class="fa fa-check-square-o"></span>Get Started</button>
+        <button class="btn-get-started" onclick="location.href = 'components/'"><span class="fa fa-check-square-o"></span>Get Started</button>
         <button class="btn-how-it-works"><span class="fa fa-arrow-circle-right"></span>How To Operate</button>
         <!-- <button class="btn-arrow-right"><span class="fa fa-chevron-right"></span></button> -->
     </div>
