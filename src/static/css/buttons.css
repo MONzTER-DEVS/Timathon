@@ -166,10 +166,11 @@
 }
 
 #selector-label{
-    margin: 0px 78vh;
-    padding: 10px 132px;
+    margin: 20px auto;
+    padding: 14px 226px;
     border: 3px solid #EE964B;
     border-radius: 48px;
+    background-color: transparent;
     text-transform: uppercase;
     font-weight: bold;
     color: #EE964B;
@@ -178,14 +179,15 @@
     justify-content: center;
     font-family: 'Baloo Bhai 2', cursive;
     font-size: 20px;
-    cursor: pointer;
     transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    width: 593px;
 }
 
 #selector-label:hover{
     transform: scale(1.04);
-    color: white;
     background-color: #EE964B;
+    color: white;
 }
 
 #selector-label.active {
