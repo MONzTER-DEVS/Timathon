@@ -69,6 +69,7 @@
 
 .navbar-list {
     width: 100vw;
+    margin: 0;
 }
 
 .navbar-list-item {
