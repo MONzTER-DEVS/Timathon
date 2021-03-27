@@ -1,6 +1,5 @@
 // Variables
 let table_body = document.getElementsByClassName('table-body')[0];
-let editBtn = document.getElementsByClassName('btn-edit-class');
 let popupBgEdit = document.querySelector('.popup-bg-edit');
 let popupCloseEdit = document.querySelector('#popup-close-edit');
 let saveBtn = document.getElementById('save-changes');
@@ -9,10 +8,12 @@ let input_array = [];
 var Rows;
 
 function editBtnsLoop() {
+ let editBtn = document.getElementsByClassName('btn-edit-class');
  // Looping all the edit buttons
  for (let i = 0; i < editBtn.length; i++) {
   // click event
   editBtn[i].addEventListener('click', function () {
+   console.log('CLICKED!')
    // entering the default data in the input cells
    let popupInputEdit = document.getElementsByClassName('popup-input-edit');
    popupBgEdit.classList.add('popup-bg-active-edit');

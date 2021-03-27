@@ -35,15 +35,15 @@ popupSubmit.addEventListener('click', function () {
         row.insertCell(i).innerHTML = inputArray[i];
     }
     let lastCell = row.insertCell(inputArray.length);
-    lastCell.innerHTML = '<button class="btn btn-primary" id="btn-edit"><span class="fa fa-pencil-square-o"></span>Edit</button>\n' +
+    lastCell.innerHTML = '<button class="btn btn-primary btn-edit-class" id="btn-edit"><span class="fa fa-pencil-square-o"></span>Edit</button>\n' +
         '            <button class="btn btn-danger btn-delete" id="btn-delete" onclick="deleteRowOfTable(this)"><span class="fa fa-remove"></span>Delete</button>'
-     editBtnsLoop();
     for (let i = 0; i < popupInputs.length; i++) {
         popupInputs[i].value = '';
     }
 
     popupBg.classList.remove('popup-active');
     inputArray = [];
+    editBtnsLoop();
 })
 
 // Filter Row
