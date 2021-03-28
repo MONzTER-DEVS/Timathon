@@ -14,8 +14,7 @@ urlpatterns = [
     path('components/charts/results', views.charts, name='charts_results'),
     path('components/tables/', views.tables, name='tables'),
     path('components/tables/results/', views.table_result, name='table_results'),
-    path('my_files/', views.my_files, name='favourites'),
-    path('redirect/', views.my_files, name='favourites'),
+    path('my_files/', views.my_files, name='my_files'),
 ]
 
 if settings.DEBUG:

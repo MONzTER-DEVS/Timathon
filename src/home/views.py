@@ -30,11 +30,6 @@ def index(request):
 def components(request):
     return render(request, 'components/components.html')
 
-
-def favourites(request):
-    return render(request, 'home/favourites.html')
-
-
 def extract_data(fp):
     """
 
