@@ -8,3 +8,5 @@ var fileUpload = function (e) {
 
 let fileInput = document.getElementById('file-upload-id');
 fileInput.addEventListener('change', fileUpload);
+
+

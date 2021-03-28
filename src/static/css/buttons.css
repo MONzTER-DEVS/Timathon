@@ -164,6 +164,9 @@
 .file-upload-btn{
     visibility: hidden;
 }
+.file-upload-btn-chart{
+    visibility: hidden;
+}
 
 #selector-label{
     margin: 20px auto;
@@ -183,8 +186,30 @@
     cursor: pointer;
     width: 593px;
 }
-
+#selector-label-chart{
+    margin: 20px auto;
+    padding: 14px 226px;
+    border: 3px solid #EE964B;
+    border-radius: 48px;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #EE964B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    width: 593px;
+}
 #selector-label:hover{
+    transform: scale(1.04);
+    background-color: #EE964B;
+    color: white;
+}
+#selector-label-chart:hover{
     transform: scale(1.04);
     background-color: #EE964B;
     color: white;
@@ -192,7 +217,13 @@
 
 #selector-label.active {
     background-color: transparent;
-    color: black;
+    color: #000000;
+    padding: 10px 50px;
+
+}
+#selector-label-chart.active {
+    background-color: transparent;
+    color: #000000;
     padding: 10px 50px;
 
 }
@@ -202,8 +233,29 @@ label[for="file-upload-id"] {
     color: transparent;
 }
 
+label[for="file-upload-id-chart"]{
+    color: transparent;
+}
 
 .form-submit-button {
+    margin: 20px auto;
+    padding: 14px 226px;
+    border: 3px solid #EE964B;
+    border-radius: 48px;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #EE964B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.form-submit-button-chart {
     margin: 20px auto;
     padding: 14px 226px;
     border: 3px solid #EE964B;
@@ -227,5 +279,13 @@ label[for="file-upload-id"] {
     color: white;
 }
 
+.form-submit-button-chart:hover {
+    transform: scale(1.04);
+    background-color: #EE964B;
+    color: white;
+}
 
 
+.form-text-chart{
+    text-align: center;
+}

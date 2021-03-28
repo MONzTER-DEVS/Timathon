@@ -94,8 +94,7 @@ def table_result(request):
 
 def charts_select(request):
     if request.COOKIES.get('chart_file'):
-        # return redirect('home')
-        pass
+        return redirect('home:index')
     if request.method == 'POST':
         form = ChartDataForm(request.FILES)
         if form.is_valid():
@@ -113,40 +112,9 @@ def charts_select(request):
         else:
             print('OOF')
     else:
-        data = None
         form = TableDataForm()
     context = {"form": form}
-    return render(request, 'components/tables/tables.html', context)
-    # if request.method == 'GET':
-    #     return render(request, "components/charts/select.html")
-    # elif request.method == 'POST':
-    #     # file extraction not working
-
-    #     # print(request.FILES)
-    #     # file = request.FILES['file']
-    #     #
-    #     # type_of_chart = request.POST['type']
-    #     # fn = os.path.join(MEDIA_ROOT, file.name)
-    #     # data = extract_data(fn)
-
-    #     # making the plot
-    #     x = np.arange(0, np.pi * 3, .1)
-    #     y = np.sin(x)
-    #     fig = plt.figure()
-    #     plt.plot(x, y)
-
-    #     # converting
-    #     imgdata = StringIO()
-    #     fig.savefig(imgdata, format='svg')
-    #     imgdata.seek(0)
-    #     to_return_plot = imgdata.getvalue()
-
-    #     context = {
-    #         'graph': to_return_plot
-    #     }
-
-    context = {}
-    response = render(request, "components/charts/select.html", context)
+    response = render(request, 'components/charts/select.html', context)
     return response
 
 

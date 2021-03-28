@@ -462,3 +462,9 @@ span {
     align-items: center;
     flex-direction: column;
 }
+
+.form-container-chart{
+    top: 250px;
+    position: absolute;
+    right: 437px;
+}
