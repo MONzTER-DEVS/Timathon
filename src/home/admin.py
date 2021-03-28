@@ -3,4 +3,4 @@ from .models import TableDataFile, ChartDataFile
 
 # Register your models here.
 admin.site.register(TableDataFile)
-admin.ste.register(ChartDataFile)
+admin.site.register(ChartDataFile)
