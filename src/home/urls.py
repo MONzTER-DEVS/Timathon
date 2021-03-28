@@ -11,6 +11,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('components/', views.components, name='components'),
     path('components/charts/', views.charts_select, name='charts'),
+    path('components/charts/', views.charts, name='charts_results'),
     path('components/tables/', views.tables, name='tables'),
     path('components/tables/results/', views.table_result, name='table_results'),
     path('my_files/', views.my_files, name='favourites'),

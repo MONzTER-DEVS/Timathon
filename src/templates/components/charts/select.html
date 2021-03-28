@@ -1,22 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
+{% extends 'components/charts/base_select.html' %}
+{% block header %}
+    <nav class="navbar-header flex">
+        <div class="navbar-div">
+            <ul class="navbar-list flex">
+                <div class="navbar-logo-div">
+                    <embed src="{% static 'images\logo.svg' %}" alt="LOGO-IMAGE" id="navbar-logo">
+                </div>
+                <!--            <li class="navbar-brand flex underline-brand"><a class="navbar-brand-link bold" href="#">MENTIS OCULI</a></li>-->
+                <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link"
+                                                href="{% url 'home:index' %}">Home</a></li>
+                <li class="navbar-list-item"><a class="navbar-list-link flex"
+                                                href="{% url 'home:components' %}">Components</a></li>
+                <!-- <li class="navbar-list-item"><a class="navbar-list-link flex"
+                                            href="{% url 'home:favourites' %}">Favourites</a></li> -->
 
-<body>
-    <form action="{% url 'home:charts' %}" method="post">
+                {% if user.is_authenticated %}
+                    <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
+                        <span class="fa fa-sign-in"> </span> Sign out
+                    </button>
+
+                    <div id="welcome-user">
+                        Hi, {{ user.first_name }}
+                    </div>
+
+                {% else %}
+                    <li class="navbar-list-item">
+                        <button class="flex navbar-button" id="navbar-signin" href="#"><span
+                                class="fa fa-sign-in"> </span>Signin
+                        </button>
+                    </li>
+
+                    <li class="navbar-list-item">
+                        <button class="flex navbar-button" id="navbar-signup" href="#"
+                                onclick="location.href='/signup'">
+                            <span class="fa fa-user"></span> Signup
+                        </button>
+                    </li>
+
+                {% endif %}
+
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+{% block Chart_Select %}
+    <form action="" method="post" enctype="multipart/form-data
+">
         {% csrf_token %}
-        <label> <span>File</span>
-            <input type="file" id="file" name="file" required>
-        </label>
-
-        <input type="radio" name="type" value="pie chart">
-        <input type="radio" name="type" value="bar graphs">
-        <input type="submit">
+        <div class="form-container-chart">
+            <div class="form-div-chart">
+                {{ form.as_p }}
+            </div>
+            <label for="file-upload-id-chart" id="selector-label-chart"><span class="fa fa-file-excel-o"></span>Select File</label>
+            <p class="form-text-chart">Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic For You!</p>
+            <button type="submit" class="form-submit-button-chart">Submit</button>
+        </div>
     </form>
-
-</body>
-
-</html>
+{% endblock %}

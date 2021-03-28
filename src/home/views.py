@@ -15,11 +15,11 @@ from django.contrib import messages
 from .models import *
 
 from timathon.settings import MEDIA_ROOT
-from .forms import TableDataForm
+from .forms import TableDataForm, ChartDataForm
 
 # Create your views here.
 table_data = []
-
+chart_data = []
 
 # the home page
 def index(request):
@@ -33,10 +33,6 @@ def components(request):
 
 def favourites(request):
     return render(request, 'home/favourites.html')
-
-
-def charts(request):
-    return render(request, 'components/charts/charts.html')
 
 
 def extract_data(fp):
@@ -97,6 +93,30 @@ def table_result(request):
 
 
 def charts_select(request):
+    if request.COOKIES.get('chart_file'):
+        # return redirect('home')
+        pass
+    if request.method == 'POST':
+        form = ChartDataForm(request.FILES)
+        if form.is_valid():
+            uploaded_file = request.FILES['chart_file']
+            fs = FileSystemStorage()
+            # filename = uploaded_file.name
+            fs.save(uploaded_file.name, uploaded_file)
+            form.save()
+            fn = os.path.join(MEDIA_ROOT, uploaded_file.name)
+            chart_data.append(fn)
+            UserFile(user_name=request.user.username, file_name=fn).save()
+            return HttpResponseRedirect(reverse_lazy('home:charts_results'))
+            # time.sleep(2)
+            # return HttpResponseRedirect(reverse_lazy('home:table_results'))
+        else:
+            print('OOF')
+    else:
+        data = None
+        form = TableDataForm()
+    context = {"form": form}
+    return render(request, 'components/tables/tables.html', context)
     # if request.method == 'GET':
     #     return render(request, "components/charts/select.html")
     # elif request.method == 'POST':
@@ -126,8 +146,13 @@ def charts_select(request):
     #     }
 
     context = {}
-    response = render(request, "components/charts/chart_rendered.html", context)
+    response = render(request, "components/charts/select.html", context)
     return response
+
+
+def charts(request):
+    global chart_data
+    return render(request, 'components/charts/charts.html')
 
 
 def my_files(request):
@@ -138,3 +163,11 @@ def my_files(request):
         response = render(request, 'components/components.html')
         response.set_cookie("file", request.POST['fn'])
         return response
+
+
+# Read dis LakBoi
+# line 104-is the name of the file uploaded by the user
+# line 107-is the whole path
+# after the submit button he will be redirected to charts function
+# so do the backend in that function
+# chart_data[-1] is having the whole path and then u can use matpotlib and all stuff that idk
