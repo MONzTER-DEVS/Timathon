@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{% static 'css/edit.css' %}">
     <link rel="stylesheet" href="{% static 'css/popup.css' %}">
     <link rel="stylesheet" href="{% static 'css/select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/delete.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -47,6 +48,9 @@
 
 <div class="popup-div-edit">
     {% block PopUpEdit %}{% endblock %}
+</div>
+<div class="popup-div-delete">
+    {% block PopUpDelete %}{% endblock %}
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
 

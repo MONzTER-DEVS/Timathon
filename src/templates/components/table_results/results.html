@@ -144,3 +144,15 @@
     </div>
 </div>
 {% endblock %}
+{% block PopUpDelete %}
+    <div class="popup-bg-delete">
+        <div class="popup-delete">
+            <h2 class="popup-heading" style="text-align: center;">Are you are sure you want to delete the record?</h2>
+            <div class="popup-delete-btns" style="display: flex; align-items: center">
+                <button class="btn btn-success" id="btn-yes" style="    margin-right: 20px;">Yes</button>
+                <button class="btn btn-danger" id="btn-no">No</button>
+            </div>
+            <span class="popup-close-delete fa fa-times"></span>
+        </div>
+    </div>
+{% endblock %}

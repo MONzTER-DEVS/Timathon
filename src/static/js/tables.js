@@ -1,9 +1,21 @@
 var table = document.getElementById('table-id');
+var PopupBgDelete = document.querySelector('.popup-bg-delete');
+var PopupBgDeleteClose = document.querySelector('.popup-close-delete');
+PopupBgDeleteClose.addEventListener('click', () => {
+    PopupBgDelete.classList.remove('popup-bg-delete-active');
+})
 
 // Delete Row
-function deleteRowOfTable(row){
-      let rowIndex = row.parentNode.parentNode.rowIndex;
-      table.deleteRow(rowIndex);
+function deleteRowOfTable(row) {
+    PopupBgDelete.classList.add('popup-bg-delete-active');
+    document.getElementById('btn-yes').addEventListener('click', () => {
+        let rowIndex = row.parentNode.parentNode.rowIndex;
+        table.deleteRow(rowIndex);
+        PopupBgDelete.classList.remove('popup-bg-delete-active');
+    })
+    document.getElementById('btn-no').addEventListener('click', ()=>{
+        PopupBgDelete.classList.remove('popup-bg-delete-active');
+    })
 }
 
 // Add Row
@@ -51,8 +63,6 @@ popupSubmit.addEventListener('click', function () {
     position = -1;
     editBtnsLoop();
 })
-
-// Filter Row
 
 
 // Export The Model
