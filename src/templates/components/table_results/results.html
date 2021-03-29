@@ -108,13 +108,12 @@
                 <button class="btn btn-danger btn-delete" id="btn-delete" onclick="deleteRowOfTable(this)"><span
                         class="fa fa-remove"></span>Delete</button>
             </td>
-        </tr>
         {% endfor %}
+        </tr>
     </tbody>
 </table>
-
-
 {% endblock %}
+
 {% block PopUp %}
 <div class="popup-bg">
     <div class="popup">
@@ -122,6 +121,7 @@
         {% for header in headers %}
         <span class="popup-label">{{header}}: </span><input class="popup-input" type="text">
         {% endfor %}
+        <span class="popup-label">At Position:</span><input class="popup-input" type="text">
         <button class="popup-submit">Submit</button>
         <span class="fa fa-times popup-close"></span>
     </div>

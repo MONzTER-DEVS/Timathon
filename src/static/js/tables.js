@@ -21,16 +21,21 @@ popupClose.addEventListener('click', function () {
 })
 
 let inputArray = [];
+let position = -1;
 let tableBody = document.getElementsByClassName('table-body')[0];
 let popupSubmit = document.getElementsByClassName('popup-submit')[0];
 let popupInputs = document.getElementsByClassName('popup-input');
 popupSubmit.addEventListener('click', function () {
     console.log('OOF');
     for (let i = 0; i < popupInputs.length; i++) {
-        inputArray.push(popupInputs[i].value);
+        if (i === popupInputs.length - 1) {
+            position = popupInputs[i].value;
+        } else {
+            inputArray.push(popupInputs[i].value);
+        }
     }
     console.log(inputArray);
-    const row = tableBody.insertRow(table.rows.length - 1);
+    const row = tableBody.insertRow(position-1);
     for (let i = 0; i < inputArray.length; i++) {
         row.insertCell(i).innerHTML = inputArray[i];
     }
@@ -43,6 +48,7 @@ popupSubmit.addEventListener('click', function () {
 
     popupBg.classList.remove('popup-active');
     inputArray = [];
+    position = -1;
     editBtnsLoop();
 })
 
