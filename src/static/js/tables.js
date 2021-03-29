@@ -52,7 +52,8 @@ popupSubmit.addEventListener('click', function () {
 // Export The Model
 
 function exportTableToExcel(tableID, filename = '') {
-    document.getElementById('btn-add-id').style.visibility = 'hidden';
+    document.getElementById('btn-add-id').style.display = 'none';
+    document.getElementsByClassName('search-div')[0].style.display = 'none';
     let tableHeaders = table.getElementsByTagName('th');
     let lastIndex = tableHeaders.length - 1;
     if (tableHeaders[lastIndex].innerHTML === 'Manipulations') {
@@ -97,7 +98,8 @@ function test(){
     }
 
 function exportTableToPDF() {
-    document.getElementById('btn-add-id').style.visibility = 'hidden';
+    document.getElementById('btn-add-id').style.display = 'none';
+    document.getElementsByClassName('search-div')[0].style.display = 'none';
 
     let tableHeaders = table.getElementsByTagName('th');
     let lastIndex = tableHeaders.length - 1;
