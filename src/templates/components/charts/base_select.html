@@ -57,6 +57,8 @@
 <script src="{% static 'js/features.js' %}"></script>
 <script src="{% static 'js/tables.js' %}"></script>
 <script src="{% static 'js/select.js' %}"></script>
+<script src="{% static 'js/select2.js' %}"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="{% static 'js/edit.js' %}"></script>
 <script src="{% static 'js/charts.js' %}"></script>
 <script src="{% static 'js/fileinput2.js' %}"></script>
@@ -80,6 +82,7 @@
     AOS.init();
 </script>
 
-
+{% block scripts %}
+{% endblock %}
 </body>
 </html>

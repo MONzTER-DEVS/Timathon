@@ -14,7 +14,8 @@ urlpatterns = [
     path('components/charts/results', views.charts, name='charts_results'),
     path('components/tables/', views.tables, name='tables'),
     path('components/tables/results/', views.table_result, name='table_results'),
-    path('my_files/', views.my_files, name='my_files'),
+    # path('my_files/', views.my_files, name='my_files'),
+    path('api/data/', views.json_data, name='json_data'),
 ]
 
 if settings.DEBUG:

@@ -7,7 +7,7 @@ import time
 import numpy as np
 
 from django.shortcuts import render, HttpResponse, redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
@@ -99,7 +99,8 @@ def charts_select(request):
             fs.save(uploaded_chart_file.name, uploaded_chart_file)
             form.save()
             fn = os.path.join(MEDIA_ROOT, uploaded_chart_file.name)
-            chart_data.append(fn)
+            data = extract_data(fn)
+            chart_data.append(data)
             UserFile(user_name=request.user.username, file_name=fn).save()
             return HttpResponseRedirect(reverse_lazy('home:charts_results'))
         else:
@@ -111,8 +112,21 @@ def charts_select(request):
 
 
 def charts(request):
+    messages.success(request, 'Your Data Has Been Successfully Visualized By Mentis Oculi')
     global chart_data
-    return render(request, 'components/charts/charts.html')
+    print(chart_data[-1])
+    jsonData = chart_data[-1].to_json()
+    print(jsonData)
+    headers = []
+    firstRow = []
+    dataRow = []
+    for header in chart_data[-1]:
+        headers.append(header)
+    for firstrow in chart_data[-1][f'{headers[0]}']:
+        firstRow.append(firstrow)
+    for datarow in chart_data[-1][f'{headers[-1]}']:
+        dataRow.append(datarow)
+    return render(request, 'components/charts/charts.html', {'headers': headers, 'firstrow': firstRow, 'datarow': dataRow})
 
 
 def my_files(request):
@@ -123,6 +137,13 @@ def my_files(request):
         response = render(request, 'components/components.html')
         response.set_cookie("file", request.POST['fn'])
         return response
+
+
+def json_data(request):
+    global chart_data
+    jsonData = chart_data[-1].to_json()
+    print(jsonData)
+    return JsonResponse(jsonData, safe=False)
 
 
 # Read dis LakBoi

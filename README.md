@@ -26,6 +26,8 @@ existing data and export your model as an Excel, pdf or a png file.<br>
     3. Visulize It In The Form Of Various Types Of Grpahs.
 
 ## [How It Works]()
+``Quick Note: If you want you can test Mentis Oculi with the sample data provided in the sample data folder 
+in the repository.``<br>
 
 1.👉Go To [Mentis Oculi Website](https://mentis-oculi.herokuapp.com/, "Your Data Visualizer")<br><br>
 <img src="https://user-images.githubusercontent.com/75211281/112755349-e5cf5480-8ffd-11eb-88d9-f92f953404a4.gif" width=500 height=300><br>

@@ -79,3 +79,85 @@
     border-radius: 5px;
     font-size: 18px;
 }
+
+.select-box-two {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.select-box-two .options-container-two {
+    background-color: #2f3640;
+    color: #f5f6fa;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+}
+
+.selected-two {
+    background-color: #2f3640;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #f5f6fa;
+    position: relative;
+    order: 0;
+}
+
+.select-box-two .option-two,
+.selected-two {
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.select-box-two .option-two:hover {
+    background: #414b57;
+}
+
+.select-box-two label {
+    cursor: pointer;
+}
+
+.select-box-two .option-two .radio {
+    display: none;
+}
+
+.select-box-two .options-container-two.active-options-two {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+/*.select-box .options-container.active-options + .selected::after{*/
+/*    transform: rotateX(180deg);*/
+/*}*/
+
+.select-box-two .options-container-two::-webkit-scrollbar {
+    width: 8px;
+    background-color: #0d141f;
+    border-radius: 0 8px 8px 0;
+}
+
+.options-container-two::-webkit-scrollbar-thumb {
+    background-color: #525861;
+    border-radius: 0 8px 8px 0;
+
+}
+
+
+.arrow-css {
+    position: absolute;
+    right: 14px;
+    transition: all 0.4s;
+}
+
+.input-search {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 18px;
+}

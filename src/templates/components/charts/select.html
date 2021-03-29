@@ -13,8 +13,8 @@
                                                 href="{% url 'home:index' %}">Home</a></li>
                 <li class="navbar-list-item"><a class="navbar-list-link flex"
                                                 href="{% url 'home:components' %}">Components</a></li>
-                <li class="navbar-list-item"><a class="navbar-list-link flex"
-                                            href="{% url 'home:my_files' %}">MyFiles</a></li>
+                {#                <li class="navbar-list-item"><a class="navbar-list-link flex"#}
+                {#                                            href="{% url 'home:my_files' %}">MyFiles</a></li>#}
                 {% if user.is_authenticated %}
                     <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
                         <span class="fa fa-sign-in"> </span> Sign out
@@ -51,9 +51,54 @@
             <div class="form-div-chart">
                 {{ form.as_p }}
             </div>
-            <label for="file-upload-id-chart" id="selector-label-chart"><span class="fa fa-file-excel-o"></span>Select File</label>
+            <p style="margin-left: 59px;
+    color: red;
+    font-size: 13px;">Notice: For the time being we only support charts for 2d Arrays <a
+                    href="{% static 'images/example.png' %}" target="_blank">For
+                Example</a></p>
+            <label for="file-upload-id-chart" id="selector-label-chart"><span class="fa fa-file-excel-o"></span>Select
+                File</label>
             <p class="form-text-chart">Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic For You!</p>
+            <div class="form-div-chart-two" style="    margin-left: -142px;">
+                <div class="select-box-two" style="display: flex;
+    width: 87%;
+    flex-direction: column;
+    margin: 10px 100px">
+
+                    <div class="options-container-two">
+                        <div class="option-two">
+                            <input type="radio" class="radio" id="bar" name="category">
+                            <label for="bar" style="text-transform: capitalize;">Bar</label>
+
+                        </div>
+                        <div class="option-two">
+                            <input type="radio" class="radio" id="pie" name="category">
+                            <label for="pie" style="text-transform: capitalize;">Pie</label>
+                        </div>
+                        <div class="option-two">
+
+                            <input type="radio" class="radio" id="line" name="category">
+                            <label for="line" style="text-transform: capitalize;">Line</label>
+                        </div>
+                        <div class="option-two">
+
+                            <input type="radio" class="radio" id="radar" name="category">
+                            <label for="radar" style="text-transform: capitalize;">Radar</label>
+                        </div>
+                    </div>
+                    <div class="selected-two">
+                        Change Graph Type
+                        <!--            <span class="fa fa-arrow-down arrow-css"></span>-->
+                    </div>
+                </div>
+            </div>
             <button type="submit" class="form-submit-button-chart">Submit</button>
         </div>
     </form>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+
+    </script>
 {% endblock %}

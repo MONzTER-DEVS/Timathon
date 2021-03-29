@@ -15,8 +15,8 @@
             </div>
             <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link" href="{% url 'home:index' %}">Home</a></li>
             <li class="navbar-list-item"><a class="navbar-list-link flex" href="{% url 'home:components' %}">Components</a></li>
-            <li class="navbar-list-item"><a class="navbar-list-link flex"
-                                            href="{% url 'home:my_files' %}">MyFiles</a></li>
+{#            <li class="navbar-list-item"><a class="navbar-list-link flex"#}
+{#                                            href="{% url 'home:my_files' %}">MyFiles</a></li>#}
             {% if user.is_authenticated %}
                 <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
                     <span class="fa fa-sign-in"> </span> Sign out
@@ -47,7 +47,7 @@
 {% block main-bg %}
 <div class="bg-div flex">
     <embed src="{% static 'images\logo.svg' %}" width="400px" alt="LOGO-IMAGE" class="heading-img">
-    <h1 class="heading-desc">Your Perfect Data Visualizer</h1>
+    <h1 class="heading-desc">Your Perfect Data Analyzer And Visualizer</h1>
     <p class="features-text flex">Visualize Data, View Charts, Make Tables, Export Your Model And Much More...</p>
     <div class="buttons-div">
         <!-- <button class="btn-arrow-left"><span class="fa fa-chevron-left"></span></button> -->
@@ -93,7 +93,7 @@
         </div>
         <div class="feature-three flex" data-aos="fade-right" data-aos-duration="1000">
             <div class="feature-three-text-div">
-                <h1 class="heading-feature">Want All The <span class="feature-span">Different Types <br>Of Graph</span>
+                <h1 class="heading-feature">Want The <span class="feature-span">Different Types <br>Of Graph</span>
                     For Your Data?
                 </h1>
                 <div class="underline-blue"></div>

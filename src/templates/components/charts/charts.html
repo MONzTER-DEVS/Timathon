@@ -1,8 +1,8 @@
 {% extends 'components/charts/base.html' %}
 {% load static %}
-{% block title %}Mentis Oculi | Chart <Visualize></Visualize>{% endblock %}
+{% block title %}Mentis Oculi | Chart Visualize{% endblock %}
 {% block header %}
-        <nav class="navbar-header flex">
+    <nav class="navbar-header flex">
         <div class="navbar-div">
             <ul class="navbar-list flex">
                 <div class="navbar-logo-div">
@@ -13,8 +13,8 @@
                                                 href="{% url 'home:index' %}">Home</a></li>
                 <li class="navbar-list-item"><a class="navbar-list-link flex"
                                                 href="{% url 'home:components' %}">Components</a></li>
-                <li class="navbar-list-item"><a class="navbar-list-link flex"
-                                            href="{% url 'home:my_files' %}">MyFiles</a></li>
+                {#                <li class="navbar-list-item"><a class="navbar-list-link flex"#}
+                {#                                            href="{% url 'home:my_files' %}">MyFiles</a></li>#}
 
                 {% if user.is_authenticated %}
                     <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
@@ -46,5 +46,99 @@
     </nav>
 {% endblock %}
 {% block Chart_Content %}
-<h1>HELLO</h1>
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" style="margin-top: 74px;
+    margin-right: 80px;
+    margin-left: 80px;" role="alert">
+            <strong>Hurrah:</strong> {{ message }}
+        </div>
+    {% endfor %}
+    <div id="chart-area" style="background-color: white;
+    margin: 65px 80px;">
+        <canvas id="myChart" style="    width: 1092px;
+    height: 496px;
+    display: block"></canvas>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+
+        Chart.defaults.global.legend.display = false;
+        window.addEventListener('DOMContentLoaded', () => {
+
+            var dataUrl = `/api/data/`
+            var jsonData;
+            var labels = [];
+            var headers_ = [];
+            var data = [];
+            {% for element in firstrow %}
+                labels.push('{{ element }}');
+            {% endfor %}
+            {% for datacell in datarow %}
+                data.push('{{ datacell }}');
+            {% endfor %}
+            {% for header in headers %}
+                headers_.push('{{ header }}');
+            {% endfor %}
+            let firstElement = headers_[0]
+            let lastElement = headers_[headers_.length - 1]
+            $.ajax({
+                method: 'GET',
+                url: dataUrl,
+                success: function (response) {
+                    jsonData = response;
+                }
+            })
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                min: 0,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: lastElement
+                            }
+                        }],
+                        xAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: firstElement
+                            }
+                        }]
+                    }
+                }
+            });
+        })
+
+    </script>
 {% endblock %}
