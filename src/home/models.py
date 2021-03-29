@@ -7,7 +7,7 @@ class TableDataFile(models.Model):
 
 
 class ChartDataFile(models.Model):
-    chart_file = models.FileField(blank=True)
+    chartfile = models.FileField(blank=True)
 
 
 class UserFile(models.Model):

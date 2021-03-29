@@ -18,11 +18,11 @@ class TableDataForm(forms.ModelForm):
 class ChartDataForm(forms.ModelForm):
     class Meta:
         model = ChartDataFile
-        fields = ('chart_file',)
+        fields = ('chartfile',)
 
     def __init__(self, *args, **kwargs):
         super(ChartDataForm, self).__init__(*args, **kwargs)
-        self.fields['chart_file'].widget.attrs = {
+        self.fields['chartfile'].widget.attrs = {
             'class': 'file-upload-btn-chart',
             'id': 'file-upload-id-chart'
         }

@@ -88,29 +88,26 @@ def table_result(request):
 
 
 def charts_select(request):
-    if request.COOKIES.get('chart_file'):
-        return redirect('home:index')
+    if request.COOKIES.get('chartfile'):
+        return redirect('home:charts_results')
     if request.method == 'POST':
-        form = ChartDataForm(request.FILES)
+        form = ChartDataForm(request.POST, request.FILES)
         if form.is_valid():
-            uploaded_file = request.FILES['chart_file']
+            uploaded_chart_file = request.FILES['chartfile']
             fs = FileSystemStorage()
             # filename = uploaded_file.name
-            fs.save(uploaded_file.name, uploaded_file)
+            fs.save(uploaded_chart_file.name, uploaded_chart_file)
             form.save()
-            fn = os.path.join(MEDIA_ROOT, uploaded_file.name)
+            fn = os.path.join(MEDIA_ROOT, uploaded_chart_file.name)
             chart_data.append(fn)
             UserFile(user_name=request.user.username, file_name=fn).save()
             return HttpResponseRedirect(reverse_lazy('home:charts_results'))
-            # time.sleep(2)
-            # return HttpResponseRedirect(reverse_lazy('home:table_results'))
         else:
             print('OOF')
     else:
-        form = TableDataForm()
+        form = ChartDataForm()
     context = {"form": form}
-    response = render(request, 'components/charts/select.html', context)
-    return response
+    return render(request, 'components/charts/select.html', context)
 
 
 def charts(request):
@@ -129,8 +126,8 @@ def my_files(request):
 
 
 # Read dis LakBoi
-# line 104-is the name of the file uploaded by the user
-# line 107-is the whole path
+# line 98-is the name of the file uploaded by the user
+# line 101-is the whole path
 # after the submit button he will be redirected to charts function
 # so do the backend in that function
 # chart_data[-1] is having the whole path and then u can use matpotlib and all stuff that idk

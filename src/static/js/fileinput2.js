@@ -6,5 +6,5 @@ var fileUploadChart = function (e) {
     output.classList.add('active');
 };
 
-let fileInputChart = document.getElementById('file-upload-id');
+let fileInputChart = document.getElementById('file-upload-id-chart');
 fileInputChart.addEventListener('change', fileUploadChart);
