@@ -1,6 +1,6 @@
 # [Mentis Oculi](https://mentis-oculi.herokuapp.com/ "Your Data Visualizer")
 
-![logo](https://user-images.githubusercontent.com/75211281/112755216-5cb81d80-8ffd-11eb-81bf-f0195650cf9d.png)
+![logo](https://user-images.githubusercontent.com/75211281/113019687-7c874700-919f-11eb-81cb-6bb775676c68.png)
 
 A website with **_free_** tools which you can use to analyse your data...<br><br>
 This is ``MONzTER DEVS'`` submission for the Timathon 2021 (March)
