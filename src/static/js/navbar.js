@@ -2,7 +2,7 @@
 const nav = document.querySelector(".navbar-div");
 
 const colorNav = 'rgba(0, 0, 0, 0.5)';
-const tempNavHeight = 120;
+const tempNavHeight = 50;
 function changeColorNav(){
     if (nav.getBoundingClientRect().top + document.documentElement.scrollTop > tempNavHeight) {
         nav.style.backgroundColor = colorNav;

@@ -53,6 +53,13 @@
             <strong>Hurrah:</strong> {{ message }}
         </div>
     {% endfor %}
+    <div class="btns-chart" style="margin: 10px 80px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+        <a class="btn btn-primary" href="{% url 'home:charts' %}"><span class="fa fa-arrow-left"></span>Back To Form Page</a>
+        <div class="btns-chart-inner">
+            <button class="btn btn-warning" id="btn-png"><span class="fa fa-picture-o"></span>Export As PNG</button>
+            <button class="btn btn-success" id="btn-jpg"><span class="fa fa-picture-o"></span>Export As JPG</button>
+        </div>
+    </div>
     <div id="chart-area" style="background-color: white;
     margin: 65px 80px;">
         <canvas id="myChart" style="    width: 1092px;
@@ -64,7 +71,25 @@
 
 {% block scripts %}
     <script>
-
+        myCanvas = document.getElementById('myChart');
+        btnPng = document.getElementById('btn-png');
+        btnJpg = document.getElementById('btn-jpg');
+        btnPng.addEventListener('click', ()=>{
+            const a = document.createElement('a');
+            document.body.appendChild(a);
+            a.href = myCanvas.toDataURL();
+            a.download = 'chart.png';
+            a.click();
+            document.body.removeChild(a);
+        })
+        btnJpg.addEventListener('click', ()=>{
+            const a = document.createElement('a');
+            document.body.appendChild(a);
+            a.href = myCanvas.toDataURL();
+            a.download = 'chart.jpg';
+            a.click();
+            document.body.removeChild(a);
+        })
         Chart.defaults.global.legend.display = false;
         window.addEventListener('DOMContentLoaded', () => {
 
