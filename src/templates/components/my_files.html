@@ -7,16 +7,29 @@
 </head>
 
 <body>
-    {% for file in files %}
-        {% csrf_token %}
 
-        <form>
+<h1>My files</h1>
+
+<form method="post" action="{% url 'home:my_files' %}">
+    {% csrf_token %}
+
+    <fieldset>
+        <legend>Select a file</legend>
+        {% for file in all_files %}
             <label>
-                <input type="radio" name="fn" value="{{ file.original_name }}">
-            </label>{{ file.original_name }}
-        </form>
+                <input type="radio" name="pk" value="{{ file.pk }}"> {{ file.original_file_name }} <br>
+            </label>
 
-    {% endfor %}
+        {% endfor %}
+
+        <br>
+        <label>
+            <input type="submit">
+        </label>
+    </fieldset>
+
+</form>
+
 </body>
 
 </html>

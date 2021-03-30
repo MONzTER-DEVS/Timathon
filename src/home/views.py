@@ -50,18 +50,21 @@ def extract_data(file):
 
 def save_form(request):
     form = UploadedFilesForm(request.POST, request.FILES)
-    # form = TableDataForm(request.FILES)
+    # form = TableDataForm(request.FILES)\
     if form.is_valid():
         form.save()
 
     return form
 
 
-@login_required
 def tables(request):
     data = None
     if request.COOKIES.get('file'):
-        return redirect('home:table_results')
+        data = extract_data(UserFile.objects.get(id=request.COOKIES.get('file')).file)  # get file data
+        table_data.append(data)
+        response = HttpResponseRedirect(reverse_lazy('home:table_results'))
+        response.delete_cookie('file')
+        return response
 
     if request.method == 'POST':
         form = save_form(request)
@@ -92,25 +95,21 @@ def table_result(request):
 
 
 def charts_select(request):
-    if request.COOKIES.get('chartfile'):
-        return redirect('home:charts_results')
+    if request.COOKIES.get('file'):
+
+        data = extract_data(UserFile.objects.get(id=request.COOKIES.get('file')).file)  # get file data
+        chart_data.append(data)
+        response = HttpResponseRedirect(reverse_lazy('home:charts_results'))
+        response.delete_cookie('file')
+        return response
+
     if request.method == 'POST':
-        form = ChartDataForm(request.POST, request.FILES)
-        if form.is_valid():
-            uploaded_chart_file = request.FILES['chartfile']
-            fs = FileSystemStorage()
-            # filename = uploaded_file.name
-            fs.save(uploaded_chart_file.name, uploaded_chart_file)
-            form.save()
-            fn = os.path.join(MEDIA_ROOT, uploaded_chart_file.name)
-            data = extract_data(fn)
-            chart_data.append(data)
-            UserFile(user_name=request.user.username, file_name=fn).save()
-            return HttpResponseRedirect(reverse_lazy('home:charts_results'))
-        else:
-            print('OOF')
-    else:
-        form = ChartDataForm()
+        form = save_form(request)
+        data = extract_data(form.files['chartfile'])
+        chart_data.append(data)
+        return HttpResponseRedirect(reverse_lazy('home:charts_results'))
+
+    form = ChartDataForm()
     context = {"form": form}
     return render(request, 'components/charts/select.html', context)
 
@@ -134,13 +133,15 @@ def charts(request):
                   {'headers': headers, 'firstrow': firstRow, 'datarow': dataRow})
 
 
+@login_required
 def my_files(request):
     if request.method == 'GET':
-        return render(request, 'components/my_files.html')
+        all_files = UserFile.objects.filter(username=request.user.username)
+        return render(request, 'components/my_files.html', {"all_files": all_files})
 
     else:
-        response = render(request, 'components/components.html')
-        response.set_cookie("file", request.POST['fn'])
+        response = redirect("/components")
+        response.set_cookie("file", request.POST['pk'])
         return response
 
 
@@ -151,9 +152,9 @@ def json_data(request):
     return JsonResponse(jsonData, safe=False)
 
 
-# def debug(request):
-#     data = []
-#     dat = UserFile.objects.all()
-#     for obj in dat:
-#         data.append([obj.file, obj.username, obj.original_file_name])
-#     return HttpResponse(str(data))
+def debug(request):
+    data = []
+    dat = UserFile.objects.all()
+    for obj in dat:
+        data.append([obj.file, obj.username, obj.original_file_name])
+    return HttpResponse(str(data))

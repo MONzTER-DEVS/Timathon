@@ -45,58 +45,76 @@
     </nav>
 {% endblock %}
 {% block Chart_Select %}
-    <form action="" method="post" enctype="multipart/form-data">
+    <script>
+        function check_form(){
+            let label = document.getElementById("selector-label-chart")
+            let input_tag = document.getElementById("original-file-name")
+            return true
+        }
+    </script>
+    <form action="" onsubmit="check_form()" method="post" enctype="multipart/form-data">
         {% csrf_token %}
+        <input type="hidden" name="username" value="{{ user.username }}">
+        <input type="hidden" name="original_file_name" id="original-file-name">
+
         <div class="form-container-chart">
             <div class="form-div-chart">
-                {{ form.as_p }}
+                <p>
+                    <label for="file-upload-id-chart">Chartfile:
+                        <input type="file" name="chartfile" class="file-upload-btn-chart" id="file-upload-id-chart">
+                    </label>
+                </p>
             </div>
-            <p style="margin-left: 59px;
-    color: red;
-    font-size: 13px;">Notice: For the time being we only support charts for 2d Arrays <a
-                    href="{% static 'images/example.png' %}" target="_blank">For
-                Example</a></p>
-            <label for="file-upload-id-chart" id="selector-label-chart"><span class="fa fa-file-excel-o"></span>Select
-                File</label>
-            <p class="form-text-chart">Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic For You!</p>
-            <div class="form-div-chart-two" style="    margin-left: -142px;">
-                <div class="select-box-two" style="display: flex;
-    width: 87%;
-    flex-direction: column;
-    margin: 10px 100px">
 
+            <p style="margin-left: 59px; color: red;font-size: 13px;"> Notice: For the time being we only support charts for 2d Arrays
+                <a href="/static/images/example.png" target="_blank">Example</a>
+            </p>
+
+            <label for="file-upload-id-chart" id="selector-label-chart">
+                <span class="fa fa-file-excel-o"></span>Select File
+            </label>
+            <p class="form-text-chart">
+                Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic For You!
+            </p>
+
+            <div class="form-div-chart-two" style="margin-left: -142px;">
+                <div class="select-box-two" style="display: flex; width: 87%;flex-direction: column; margin: 10px 100px">
                     <div class="options-container-two">
                         <div class="option-two">
                             <input type="radio" class="radio" id="bar" name="category">
                             <label for="bar" style="text-transform: capitalize;">Bar</label>
-
                         </div>
+
                         <div class="option-two">
                             <input type="radio" class="radio" id="pie" name="category">
                             <label for="pie" style="text-transform: capitalize;">Pie</label>
                         </div>
-                        <div class="option-two">
 
+                        <div class="option-two">
                             <input type="radio" class="radio" id="line" name="category">
                             <label for="line" style="text-transform: capitalize;">Line</label>
                         </div>
-                        <div class="option-two">
 
+                        <div class="option-two">
                             <input type="radio" class="radio" id="radar" name="category">
                             <label for="radar" style="text-transform: capitalize;">Radar</label>
                         </div>
+
                         <div class="option-two">
                             <input type="radio" class="radio" id="doughnut" name="category">
                             <label for="doughnut" style="text-transform: capitalize;">Doughnut</label>
                         </div>
                     </div>
+
                     <div class="selected-two">
                         Change Graph Type
                         <!--            <span class="fa fa-arrow-down arrow-css"></span>-->
                     </div>
                 </div>
             </div>
+
             <button type="submit" class="form-submit-button-chart">Submit</button>
+
         </div>
     </form>
 {% endblock %}
