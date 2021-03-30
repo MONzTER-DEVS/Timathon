@@ -26,35 +26,30 @@ existing data and export your model as an Excel, pdf or a png file.<br>
     3. Visulize It In The Form Of Various Types Of Grpahs.
 
 ## [How It Works]()
-``Quick Note: If you want you can test Mentis Oculi with the sample data provided in the sample data folder 
+``Quick Note: 1) If you want you can test Mentis Oculi with the sample data provided in the sample data folder 
 in the repository.``<br>
+``2) For the time being we only support 2d Arrays(2 rows, 2 columns) for charts, Chrome Browser, Laptop or Computer 
+Screen.``<br>
 
 1.👉Go To [Mentis Oculi Website](https://mentis-oculi.herokuapp.com/, "Your Data Visualizer")<br><br>
-<img src="https://user-images.githubusercontent.com/75211281/112755349-e5cf5480-8ffd-11eb-88d9-f92f953404a4.gif" width=500 height=300><br>
-2.👉 [Create An Account](https://mentis-oculi.herokuapp.com/#registerFormDiv, "Register").<br><br>
-The Video Will Come Here!
+2.👉 [Create An Account](https://mentis-oculi.herokuapp.com/#registerFormDiv, "Register").<br>
 
-   If you already have an account then [Login Here](https://mentis-oculi.herokuapp.com/#loginFormDiv, "Login").<br>
-The Video Will Come Here!<br>
+ If you already have an account then [Login Here](https://mentis-oculi.herokuapp.com/#loginFormDiv, "Login").<br>
 
 3.👉Click On [Get Started](https://mentis-oculi.herokuapp.com/components/)
    Or [Components](https://mentis-oculi.herokuapp.com/components/).
 <br> You can analyze or visualize your data through a table or a chart.<br>
-
-The Video Will Come Here!<br>
 ### [Through A Table](https://mentis-oculi.herokuapp.com/components/tables/)
 1. Select an Excel or a Csv file and submit.
-2. Mentis Oculi will eliver you that file in tabular form with some tools to make modifications to your data as 
-   shown in the gif below.
+2. Mentis Oculi will deliver you that file in tabular form with some tools to make modifications to your data.
 3. When you are done, you can export your manipulated data into Excel or PDF format.
 
-The Video Will Come Here!
-
 ### [Through Charts](https://mentis-oculi.herokuapp.com/components/charts/)
-1. In Progress.
-
-The Video Will Come Here!
-
+1. Select an Excel or a Csv file, select the chart type and submit.
+2. Mentis Oculi will deliver you that file in that particular chart type.
+3. You can export your chart or graph into PNG or JPG file.
+<br>
+   
 #### `` So? What's The **Delay** For?``
 
 #### `` Start The Awesome Journey With Mentis Oculi 😉 ``<br>
