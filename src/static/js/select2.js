@@ -17,6 +17,7 @@ optionsListTwo.forEach(o => {
         selectedTwo.innerHTML = o.querySelector('label').innerHTML;
         // index = optionsList.indexOf(o);
         choice = selectedTwo.innerHTML.toLowerCase();
+        localStorage.setItem('graph', choice);
         optionsContainerTwo.classList.remove('active-options-two');
     })
 })

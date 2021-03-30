@@ -107,6 +107,7 @@
             {% for header in headers %}
                 headers_.push('{{ header }}');
             {% endfor %}
+            var graphType = localStorage.getItem('graph');
             let firstElement = headers_[0]
             let lastElement = headers_[headers_.length - 1]
             $.ajax({
@@ -119,7 +120,7 @@
 
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
-                type: 'bar',
+                type: graphType,
                 data: {
                     labels: labels,
                     datasets: [{
