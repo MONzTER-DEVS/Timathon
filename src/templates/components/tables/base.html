@@ -36,7 +36,19 @@
     {% block header %}{% endblock %}
 </header>
 <div class="form-div-table">
-    <form method="post" enctype="multipart/form-data">
+    <script>
+        function check_form(){
+            let files = document.getElementById("file-upload-id").files;
+            if (files.length > 0){
+                document.getElementById("original-fn").value = files[files.length - 1].name
+                return true
+            }
+            else {
+                return false
+            }
+        }
+    </script>
+    <form method="post" action="{% url 'home:tables' %}" onsubmit="check_form()" enctype="multipart/form-data">
         {% block Form %}{% endblock %}
     </form>
 </div>

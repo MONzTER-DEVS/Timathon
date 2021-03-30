@@ -15,11 +15,12 @@ from django.contrib import messages
 from .models import *
 
 from timathon.settings import MEDIA_ROOT
-from .forms import TableDataForm, ChartDataForm
+from .forms import TableDataForm, ChartDataForm, UploadedFilesForm
 
 # Create your views here.
 table_data = []
 chart_data = []
+
 
 # the home page
 def index(request):
@@ -30,44 +31,47 @@ def index(request):
 def components(request):
     return render(request, 'components/components.html')
 
-def extract_data(fp):
+
+def extract_data(file):
     """
 
     :param fp: file name
     :return: data in that file
     """
 
-    if fp.endswith('csv'):
-        data = pd.read_csv(fp)
+    if file.name.endswith('csv'):
+        data = pd.read_csv(file)
 
-    elif fp.endswith('xls') or fp.endswith('xlsx'):
-        data = pd.read_excel(fp)
+    elif file.name.endswith('xls') or file.name.endswith('xlsx'):
+        data = pd.read_excel(file)
 
     return data
 
 
+def save_form(request):
+    form = UploadedFilesForm(request.POST, request.FILES)
+    # form = TableDataForm(request.FILES)
+    if form.is_valid():
+        form.save()
+
+    return form
+
+
+@login_required
 def tables(request):
     data = None
     if request.COOKIES.get('file'):
         return redirect('home:table_results')
 
     if request.method == 'POST':
-        form = TableDataForm(request.FILES)
-        if form.is_valid():
-            uploaded_file = request.FILES['file']
-            fs = FileSystemStorage()
-            fs.save(uploaded_file.name, uploaded_file)
-            form.save()
-            fn = os.path.join(MEDIA_ROOT, uploaded_file.name)
+        form = save_form(request)
+        file = form.files["file"]
+        data = extract_data(file)
 
-            UserFile(user_name=request.user.username, file_name=fn).save()
+        table_data.append(data)
+        # time.sleep(2)
+        return HttpResponseRedirect(reverse_lazy('home:table_results'))
 
-            data = extract_data(fn)
-            table_data.append(data)
-            # time.sleep(2)
-            return HttpResponseRedirect(reverse_lazy('home:table_results'))
-        else:
-            print('OOF')
     else:
         data = None
         form = TableDataForm()
@@ -126,7 +130,8 @@ def charts(request):
         firstRow.append(firstrow)
     for datarow in chart_data[-1][f'{headers[-1]}']:
         dataRow.append(datarow)
-    return render(request, 'components/charts/charts.html', {'headers': headers, 'firstrow': firstRow, 'datarow': dataRow})
+    return render(request, 'components/charts/charts.html',
+                  {'headers': headers, 'firstrow': firstRow, 'datarow': dataRow})
 
 
 def my_files(request):
@@ -146,9 +151,9 @@ def json_data(request):
     return JsonResponse(jsonData, safe=False)
 
 
-# Read dis LakBoi
-# line 98-is the name of the file uploaded by the user
-# line 101-is the whole path
-# after the submit button he will be redirected to charts function
-# so do the backend in that function
-# chart_data[-1] is having the whole path and then u can use matpotlib and all stuff that idk
+# def debug(request):
+#     data = []
+#     dat = UserFile.objects.all()
+#     for obj in dat:
+#         data.append([obj.file, obj.username, obj.original_file_name])
+#     return HttpResponse(str(data))

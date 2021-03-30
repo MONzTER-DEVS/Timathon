@@ -1,4 +1,4 @@
-from .models import TableDataFile, ChartDataFile
+from .models import TableDataFile, ChartDataFile, UserFile
 from django import forms
 
 
@@ -26,3 +26,9 @@ class ChartDataForm(forms.ModelForm):
             'class': 'file-upload-btn-chart',
             'id': 'file-upload-id-chart'
         }
+
+
+class UploadedFilesForm(forms.ModelForm):
+    class Meta:
+        model = UserFile
+        fields = ['username', 'file', 'original_file_name']

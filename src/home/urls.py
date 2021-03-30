@@ -16,7 +16,8 @@ urlpatterns = [
     path('components/tables/results/', views.table_result, name='table_results'),
     # path('my_files/', views.my_files, name='my_files'),
     path('api/data/', views.json_data, name='json_data'),
+    # path('debug', views.debug, name='debug'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

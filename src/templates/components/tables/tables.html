@@ -46,13 +46,30 @@
 
 {% block Form %}
 
-{% csrf_token %}
 <div class="form-container" >
     <div class="form-div-p">
-        {{form.as_p}}
+
+
+            {% csrf_token %}
+            <div class="form-container">
+                <div class="form-div-p">
+                    <p>
+                        <label for="file-upload-id">File:</label>
+                        <input type="file" name="file" class="file-upload-btn" id="file-upload-id">
+                        <input type="hidden" name="original_file_name" id="original-fn">
+                        <input type="hidden" name="username" value="{{ user.username }}">
+                    </p>
+                </div>
+
+                <label for="file-upload-id" id="selector-label" class="active"><span>Selected File: </span></label>
+
+                <p class="form-text">Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic For You!</p>
+                <button type="submit" class="form-submit-button">Submit</button>
+
+            </div>
     </div>
-    <label for="file-upload-id" id="selector-label"><span class="fa fa-file-excel-o"></span>Select File</label>
-    <p class="form-text">Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic For You!</p>
-    <button type="submit" class="form-submit-button">Submit</button>
+{#    <label for="file-upload-id" id="selector-label"><span class="fa fa-file-excel-o"></span>Select File</label>#}
+{#    <p class="form-text">Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic For You!</p>#}
+{#    <button type="submit" class="form-submit-button">Submit</button>#}
 </div>
 {% endblock %}
