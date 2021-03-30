@@ -13,8 +13,8 @@
                                             href="{% url 'home:index' %}">Home</a></li>
             <li class="navbar-list-item"><a class="navbar-list-link flex"
                                             href="{% url 'home:components' %}">Components</a></li>
-{#            <li class="navbar-list-item"><a class="navbar-list-link flex"#}
-{#                                            href="{% url 'home:my_files' %}">MyFiles</a></li>#}
+            <li class="navbar-list-item"><a class="navbar-list-link flex"
+                                            href="{% url 'home:my_files' %}">MyFiles</a></li>
             {% if user.is_authenticated %}
             <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
                 <span class="fa fa-sign-in"> </span> Sign out
@@ -51,7 +51,7 @@
 
 
             {% csrf_token %}
-            <div class="form-container">
+            <div class="form-container" data-aos="fade-up" data-aos-duration="1000">
                 <div class="form-div-p">
                     <p>
                         <label for="file-upload-id">File:</label>

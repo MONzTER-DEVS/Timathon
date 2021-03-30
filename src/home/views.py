@@ -27,7 +27,6 @@ def index(request):
     return render(request, 'home/index.html')
 
 
-# @login_required
 def components(request):
     return render(request, 'components/components.html')
 
@@ -133,7 +132,6 @@ def charts(request):
                   {'headers': headers, 'firstrow': firstRow, 'datarow': dataRow})
 
 
-@login_required
 def my_files(request):
     if request.method == 'GET':
         all_files = UserFile.objects.filter(username=request.user.username)

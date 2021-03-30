@@ -167,12 +167,14 @@ html, body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    left: 45vh;
     justify-content: center;
     top: 450vh;
     position: absolute;
     padding: 20px 20px;
     transform: translate(50%, 50%);
+    width: 100%;
+    /* margin: auto; */
+    left: 0px;
 }
 
 .feature-three-text-div {
@@ -467,6 +469,15 @@ span {
     top: 250px;
     position: absolute;
     right: 437px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    /* position: absolute; */
+    /* position: relative; */
+    left: 0;
 }
 
 .body-footer-two {
@@ -477,17 +488,12 @@ span {
 
 .svgies-one {
     text-align: right;
-    position: absolute;
-    right: 20px;
-    bottom: -21px;
     color: black;
     cursor: pointer;
 }
-.svgies-two{
+
+.svgies-two {
     text-align: right;
-    position: absolute;
-    right: 70px;
-    bottom: -21px;
     color: black;
     cursor: pointer;
 }
@@ -495,6 +501,83 @@ span {
 .svgies-one:hover {
     color: #32D2B5;
 }
-.svgies-two:hover{
+
+.svgies-two:hover {
     color: #32D2B5;
 }
+
+.file-heading {
+    text-align: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 50px;
+    text-shadow: 4px 2px 0 black;
+    color: #EE964B;
+}
+
+.file-heading-two {
+    text-align: center;
+    font-family: 'Recursive', cursive;
+    font-size: 30px;
+    /*text-shadow: 4px 2px 0 black;*/
+    color: #32D2B5;
+}
+
+/*.label-files {*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*}*/
+/**/
+/*input[type="radio"] {*/
+/*    display: none;*/
+/*}*/
+/**/
+/*.label-files {*/
+/*    position: relative;*/
+/*    cursor: pointer;*/
+/*    font-weight: bold;*/
+/*    padding: 20px 20px;*/
+/*}*/
+/**/
+/*.label-files::before {*/
+/*    content: "";*/
+/*    border: 2px solid darkgrey;*/
+/*    display: inline-block;*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    margin: -8px 20px;*/
+/*    margin-left: 0;*/
+/*    border-radius: 50%;*/
+/*}*/
+/**/
+/*.label-files::after {*/
+/*    content: "";*/
+/*    display: inline-block;*/
+/*    position: absolute;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    background-color: rgba(34, 34, 34, 0);*/
+/*    left: 75px;*/
+/*    top: 62px;*/
+/*    margin: -8px 20px;*/
+/*    margin-left: 0;*/
+/*    border-radius: 50%;*/
+/*    transition: all 0.4s;*/
+/*}*/
+/**/
+/*input[type="radio"]:checked + .label-files::after {*/
+/*    background-color: rgba(34, 34, 34, 1);*/
+/*}*/
+/**/
+/**/
+.form-class {
+    padding: 62px 103px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px black;
+    transition: all 0.4s;
+}
+
+.form-class:hover {
+    box-shadow: 0 0 30px black;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+

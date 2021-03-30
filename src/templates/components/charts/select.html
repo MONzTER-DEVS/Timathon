@@ -13,8 +13,8 @@
                                                 href="{% url 'home:index' %}">Home</a></li>
                 <li class="navbar-list-item"><a class="navbar-list-link flex"
                                                 href="{% url 'home:components' %}">Components</a></li>
-                {#                <li class="navbar-list-item"><a class="navbar-list-link flex"#}
-                {#                                            href="{% url 'home:my_files' %}">MyFiles</a></li>#}
+                                <li class="navbar-list-item"><a class="navbar-list-link flex"
+                                                            href="{% url 'home:my_files' %}">MyFiles</a></li>
                 {% if user.is_authenticated %}
                     <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
                         <span class="fa fa-sign-in"> </span> Sign out
@@ -52,7 +52,7 @@
             return true
         }
     </script>
-    <form action="" onsubmit="check_form()" method="post" enctype="multipart/form-data">
+    <form data-aos="fade-up" data-aos-duration="1000" action="" onsubmit="check_form()" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="hidden" name="username" value="{{ user.username }}">
         <input type="hidden" name="original_file_name" id="original-file-name">
@@ -66,7 +66,8 @@
                 </p>
             </div>
 
-            <p style="margin-left: 59px; color: red;font-size: 13px;"> Notice: For the time being we only support charts for 2d Arrays
+            <p style="color: red;
+    font-size: 13px;"> Notice: For the time being we only support charts for 2d Arrays
                 <a href="/static/images/example.png" target="_blank">Example</a>
             </p>
 
@@ -108,7 +109,7 @@
 
                     <div class="selected-two">
                         Change Graph Type
-                        <!--            <span class="fa fa-arrow-down arrow-css"></span>-->
+                        <span class="fa fa-arrow-down arrow-css"></span>
                     </div>
                 </div>
             </div>

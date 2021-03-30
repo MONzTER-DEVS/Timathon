@@ -14,9 +14,10 @@
             <li class="navbar-list-item"><a class="navbar-list-link flex" id="navbar-first-link"
                                             href="{% url 'home:index' %}">Home</a></li>
             <li class="navbar-list-item"><a class="navbar-list-link flex"
-                                            href="{% url 'home:components' %}">Components</a></li>
-{#            <li class="navbar-list-item"><a class="navbar-list-link flex"#}
-{#                                            href="{% url 'home:my_files' %}">MyFiles</a></li>#}
+                                            href="{% url 'home:components' %}" style="border-bottom: 4px solid #e6515f; border-radius: 3px;
+    margin-top: 4px;">Components</a></li>
+            <li class="navbar-list-item"><a class="navbar-list-link flex"
+                                            href="{% url 'home:my_files' %}">MyFiles</a></li>
             {% if user.is_authenticated %}
             <button class="flex navbar-button" id="navbar-signout" onclick="location.href='/signout'" href="#">
                 <span class="fa fa-sign-in"> </span> Sign out
@@ -46,16 +47,19 @@
 {% endblock %}
 
 {% block components-content %}
-<div class="container-components" data-aos="fade-up" data-aos-duration="1000">
-    <div class="heading-components">
-        Analyze Your Data
-    </div>
-    <div class="container-components flex">
-        <div class="component-inner-div" id="first-component">
-            <h1 class="heading-components-inner">Through A Table</h1>
-            <center><embed src="{% static 'images\components\tables.svg' %}" width="300px" height="200px"
-                   alt=""
-                   class="component-table"></center>
+    {% if user.is_authenticated %}
+        <div class="container-components" data-aos="fade-up" data-aos-duration="1000">
+            <div class="heading-components">
+                Analyze Your Data
+            </div>
+            <div class="container-components flex">
+                <div class="component-inner-div" id="first-component">
+                    <h1 class="heading-components-inner">Through A Table</h1>
+                    <center>
+                        <embed src="{% static 'images\components\tables.svg' %}" width="300px" height="200px"
+                               alt=""
+                               class="component-table">
+                    </center>
             <p class="para-components">
                 The data table consists of a series of columns and rows that intersect in cells, plus a header row in
                 which the names of the columns are stated, to make the content of the table understandable to the end
@@ -80,7 +84,15 @@
             </p>
             <button class="button-components" onclick="location.href= 'charts/'">Continue</button>
         </div>
-    </div>
-</div>
-
+            </div>
+        </div>
+    {% else %}
+        <div class="popup-bg">
+            <div class="popup">
+                <h2 class="popup-heading">You Need To Be Logged In To Use Our Tools!</h2>
+                <button class="btn btn-primary" id="btn-ok">OK</button>
+                <span class="fa fa-times popup-close" id="btn-close-files"></span>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

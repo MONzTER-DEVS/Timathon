@@ -18,6 +18,11 @@
     opacity: 1;
 }
 
+.popup-active-files {
+    visibility: visible;
+    opacity: 1;
+}
+
 .popup {
     position: relative;
     background-color: white;

@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/messages.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/popup.css' %}">
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/popup.css' %}">
     <link rel="stylesheet" href="{% static 'css/animation.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Google Fonts -->
@@ -37,8 +37,8 @@
     {% block header %}{% endblock %}
 </header>
 <!--Components Page-->
-<div class="body-container-components flex">
-    {% block components-content %}{% endblock %}
+<div class="my-files-div" data-aos="fade-up" data-aos-duration="1000" style="margin-top: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center">
+    {% block myFiles %}{% endblock %}
 </div>
 
 <!-- Optional JavaScript; choose one of the two! -->
@@ -54,9 +54,8 @@
 <script src="{% static 'js/tables.js' %}"></script>
 <script src="{% static 'js/animation.js' %}"></script>
 <script src="{% static 'js/navbar.js' %}"></script>
-<script src="{% static 'js/files.js' %}"></script>
 <script src="{% static 'js/popup.js' %}"></script>
-
+<script src="{% static 'js/files.js' %}"></script>
 <script src="{% static 'js/features.js' %}"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
