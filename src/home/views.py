@@ -60,10 +60,11 @@ def tables(request):
     data = None
     if request.COOKIES.get('file'):
         data = extract_data(UserFile.objects.get(id=request.COOKIES.get('file')).file)  # get file data
-        table_data.append(data)
-        response = HttpResponseRedirect(reverse_lazy('home:table_results'))
-        response.delete_cookie('file')
-        return response
+        if data.username == request.user.username:
+            table_data.append(data)
+            response = HttpResponseRedirect(reverse_lazy('home:table_results'))
+            response.delete_cookie('file')
+            return response
 
     if request.method == 'POST':
         form = save_form(request)
@@ -150,6 +151,13 @@ def my_files(request):
         return render(request, 'components/my_files.html', {"all_files": all_files})
 
     else:
+        if request.POST["action"] == "delete":
+            obj = UserFile.objects.get(id=request.POST["file_number"])
+            if request.user.username == obj.username:
+                obj.delete()
+
+            return redirect("/my_files")
+
         response = redirect("/components")
         response.set_cookie("file", request.POST['pk'])
         return response

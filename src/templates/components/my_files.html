@@ -52,20 +52,34 @@
         <div class="my-files-div" data-aos="fade-up" data-aos-duration="1000" style="margin-top: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center">
             <h1 class="file-heading">My Files</h1>
 
-        <form method="post" class="form-class" action="{% url 'home:my_files' %}">
+        <script>
+        function submit_form(num) {
+            let form = document.getElementById("form-to-submit")
+            let method = document.getElementById("action-input")
+            let fn = document.getElementById("file-number-delete")
+            method.value = "delete";
+            fn.value = num
+            form.submit()
+        }
+
+        </script>
+
+        <form method="post" class="form-class" action="{% url 'home:my_files' %}" id="form-to-submit">
             {% csrf_token %}
+            <input type="hidden" name="action" value="post" id="action-input">
+            <input type="hidden" name="file_number" value="1" id="file-number-delete">
 
             <fieldset>
                 <legend class="file-heading-two">Select a File To Edit It!</legend>
                 {% for file in all_files %}
-                    <div class="file-div" style="    display: flex; flex-direction: column;">
-                        <div class="file-inner-div" style="margin: 10px 0px; display: flex; justify-content: space-between;">
+                    <div class="file-div" style="display: flex; flex-direction: column;">
+                        <div class="file-inner-div" style="margin: 10px 0; display: flex; justify-content: space-between;">
                             <label for="">
-                                <input type="radio" name="pk" value="{{ file.pk }}" id="{{ file.original_file_name }}">
+                                <input type="radio" name="pk" value="{{ file.id }}" id="{{ file.original_file_name }}">
 
                             </label>
                             <p style="display: inline; text-transform: uppercase">{{ file.original_file_name }}</p><br>
-                            <button class="btn btn-danger">Delete File</button>
+                            <button class="btn btn-danger" onclick="submit_form({{ file.id }})">Delete File</button>
                         </div>
 
                     </div>
