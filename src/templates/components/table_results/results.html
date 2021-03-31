@@ -50,12 +50,14 @@
 </div>
 {% endfor %}
 <div class="sample-buttons">
-    <div class="sample-button-one">
-        <a class="btn btn-primary back-to-form" href="{% url 'home:tables' %}"><span
+    <div class="sample-button-one" style="display: flex;">
+        <a class="btn btn-primary back-to-form" style="margin-right: 5px;" href="{% url 'home:tables' %}"><span
                 class="fa fa-arrow-left"></span>Back To The Form</a>
-        <button id="btn-add-id" class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record
+        <button id="btn-add-id" style="margin-right: 5px;" class="btn btn-success table-add-record"><span class="fa fa-plus"></span>Add A Record
         </button>
-        <button class="btn btn-secondary">Save Changes To MyFiles</button>
+        <form action="">
+            <input type="submit" class="btn btn-secondary" value="Save Changes To MyFiles">
+        </form>
     </div>
     <div class="sample-button-two">
         <button class="btn btn-success" onclick="exportTableToExcel('table-id', 'table')">Export EXCEL</button>
