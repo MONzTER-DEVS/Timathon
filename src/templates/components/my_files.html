@@ -49,7 +49,8 @@
 {% endblock %}
 {% block myFiles %}
     {% if user.is_authenticated %}
-        <h1 class="file-heading">My Files</h1>
+        <div class="my-files-div" data-aos="fade-up" data-aos-duration="1000" style="margin-top: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center">
+            <h1 class="file-heading">My Files</h1>
 
         <form method="post" class="form-class" action="{% url 'home:my_files' %}">
             {% csrf_token %}
@@ -80,14 +81,16 @@
             </fieldset>
 
         </form>
-    {% else %}
-        <div class="popup-bg">
-            <div class="popup">
-                <h2 class="popup-heading">You Need To Be Logged In To View Your Files</h2>
-                <button class="btn btn-primary" id="btn-ok">OK</button>
-                <span class="fa fa-times popup-close" id="btn-close-files"></span>
-            </div>
+
         </div>
+            {% else %}
+    <div class="popup-bg"  style="z-index: 20;">
+        <div class="popup">
+            <h2 class="popup-heading">You Need To Be Logged In To Use Our Tools!</h2>
+            <button class="btn btn-primary" id="btn-ok">OK</button>
+            <span class="fa fa-times popup-close" id="btn-close-files"></span>
+        </div>
+    </div>
     {% endif %}
 
 {% endblock %}
