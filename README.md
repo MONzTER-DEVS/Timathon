@@ -56,6 +56,6 @@ Screen.``<br>
 
 If you liked our website, kindly do us a favour by voting us in the Codejam 😀 <br>
 
-[Vote For Us]()
+[Vote For Us](https://twtcodejam.net/timathon/submissionlist/)
 
 Made With **Love** ❤️ By - ``MONzTER DEVS`` 🙂
