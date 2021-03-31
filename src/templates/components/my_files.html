@@ -57,17 +57,14 @@
             <fieldset>
                 <legend class="file-heading-two">Select a File To Edit It!</legend>
                 {% for file in all_files %}
-                    <div class="file-div" style="    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;">
-                        <div class="file-inner-div">
+                    <div class="file-div" style="    display: flex; flex-direction: column;">
+                        <div class="file-inner-div" style="margin: 10px 0px; display: flex; justify-content: space-between;">
                             <label for="">
                                 <input type="radio" name="pk" value="{{ file.pk }}" id="{{ file.original_file_name }}">
 
                             </label>
                             <p style="display: inline; text-transform: uppercase">{{ file.original_file_name }}</p><br>
-
+                            <button class="btn btn-danger">Delete File</button>
                         </div>
 
                     </div>
