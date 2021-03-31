@@ -40,12 +40,12 @@ Screen.``<br>
    Or [Components](https://mentis-oculi.herokuapp.com/components/).
 <br> You can analyze or visualize your data through a table or a chart.<br>
 ### [Through A Table](https://mentis-oculi.herokuapp.com/components/tables/)
-1. Select an Excel or a Csv file and submit.
+1. Select an Excel file and submit.
 2. Mentis Oculi will deliver you that file in tabular form with some tools to make modifications to your data.
 3. When you are done, you can export your manipulated data into Excel or PDF format.
 
 ### [Through Charts](https://mentis-oculi.herokuapp.com/components/charts/)
-1. Select an Excel or a Csv file, select the chart type and submit.
+1. Select an Excel file, select the chart type and submit.
 2. Mentis Oculi will deliver you that file in that particular chart type.
 3. You can export your chart or graph into PNG or JPG file.
 <br>

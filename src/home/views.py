@@ -38,10 +38,10 @@ def extract_data(file):
     :return: data in that file
     """
 
-    if file.name.endswith('csv'):
-        data = pd.read_csv(file)
+    # if file.name.endswith('csv'):
+    #     data = pd.read_csv(file)
 
-    elif file.name.endswith('xls') or file.name.endswith('xlsx'):
+    if file.name.endswith('xls') or file.name.endswith('xlsx'):
         data = pd.read_excel(file)
 
     return data
