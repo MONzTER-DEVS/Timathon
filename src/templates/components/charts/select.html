@@ -47,8 +47,17 @@
 {% block Chart_Select %}
     <script>
         function check_form(){
-            let label = document.getElementById("selector-label-chart")
-            let input_tag = document.getElementById("original-file-name")
+
+            {% if not hide_file_upload %}
+                let all_files = document.getElementById("file-upload-id-chart").files
+                let input_tag = document.getElementById("original-file-name")
+
+                if (all_files.length > 0) {
+                    input_tag.value = all_files[all_files.length - 1].name;
+                } else { return false }
+
+            {% endif %}
+
             return true
         }
     </script>
@@ -58,10 +67,11 @@
         <input type="hidden" name="original_file_name" id="original-file-name">
 
         <div class="form-container-chart">
+            {% if not hide_file_upload %}
             <div class="form-div-chart">
                 <p>
                     <label for="file-upload-id-chart">Chartfile:
-                        <input type="file" name="chartfile" class="file-upload-btn-chart" id="file-upload-id-chart">
+                        <input type="file" name="file" class="file-upload-btn-chart" id="file-upload-id-chart">
                     </label>
                 </p>
             </div>
@@ -77,6 +87,7 @@
             <p class="form-text-chart">
                 Upload A CSV Or An Excel File And Let Our Mentis Oculi Do The Magic For You!
             </p>
+            {% endif %}
 
             <div class="form-div-chart-two" style="margin-left: -142px;">
                 <div class="select-box-two" style="display: flex; width: 87%;flex-direction: column; margin: 10px 100px">

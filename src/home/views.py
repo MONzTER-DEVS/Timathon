@@ -94,19 +94,31 @@ def table_result(request):
 
 
 def charts_select(request):
-    if request.COOKIES.get('file'):
+    if request.COOKIES.get('file') and not request.COOKIES.get('serving_file'):
 
-        data = extract_data(UserFile.objects.get(id=request.COOKIES.get('file')).file)  # get file data
-        chart_data.append(data)
-        response = HttpResponseRedirect(reverse_lazy('home:charts_results'))
-        response.delete_cookie('file')
+        # data = extract_data(UserFile.objects.get(id=request.COOKIES.get('file')).file)  # get file data
+        # chart_data.append(data)
+        # response = HttpResponseRedirect(reverse_lazy('home:charts_results'))
+        # response.delete_cookie('file')
+        context = {"hide_file_upload": True}
+        response = render(request, 'components/charts/select.html', context)
+        response.set_cookie("serving_file", 1)
         return response
 
     if request.method == 'POST':
-        form = save_form(request)
-        data = extract_data(form.files['chartfile'])
+        file_cookie = request.COOKIES.get("file")
+        if file_cookie:
+            data = extract_data(UserFile.objects.get(id=file_cookie).file)
+        else:
+            form = save_form(request)
+            data = extract_data(form.files['file'])
         chart_data.append(data)
-        return HttpResponseRedirect(reverse_lazy('home:charts_results'))
+
+        response = HttpResponseRedirect(reverse_lazy('home:charts_results'))
+        if file_cookie:
+            response.delete_cookie("file")
+            response.delete_cookie("serving_file")
+        return response
 
     form = ChartDataForm()
     context = {"form": form}
