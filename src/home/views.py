@@ -59,8 +59,9 @@ def save_form(request):
 def tables(request):
     data = None
     if request.COOKIES.get('file'):
-        data = extract_data(UserFile.objects.get(id=request.COOKIES.get('file')).file)  # get file data
+        data = UserFile.objects.get(id=request.COOKIES.get('file'))  # get file data
         if data.username == request.user.username:
+            data = extract_data(data.file)
             table_data.append(data)
             response = HttpResponseRedirect(reverse_lazy('home:table_results'))
             response.delete_cookie('file')
